@@ -26,6 +26,16 @@ const field1 = [
                 {thisfield:"state", parent:"country" , key:"222", type:"select",  options:importedfields2,  classes:[],styles:{},label:"Name", id="", value=null, validation:""},
                 {thisfield:"state", parent:"state" , key:"333", type:"select",  options:importedfields3,  classes:[],styles:{},label:"Name", id="", value=null, validation:""},
                 {thisfield:"name", parent:"state",  key:"444", type:"radio", options:radioOptions, classes:[],styles:{},label:"Name", id="", value=null, validation:""},
-                {thisfield:"name", type:"text", classes:[],styles:{},label:"Name", id="", value=null, validation:""},
+                {thisfield:"telephone", type:"telephone", parent:"country", patterns:countryPatterns, classes:[],styles:{},label:"Name", id="", value=null, validation:""},
+                
+                
+                {thisfield:"buttons", type:"container", classes:[],style:{},
+                 contents: [ {thisfield:"button", type:"save", classes:[],styles:{},label:"Save", id="", value=null, validation:""},
+                {thisfield:"button", type:"submit", classes:[],styles:{},label:"Submit", id="", value=null, validation:""},
+                {thisfield:"button", type:"clear", classes:[],styles:{},label:"clear", id="", value=null, validation:""}
+            ]},
+            
+            {thisfield:"message", type:"textbox", patterns:countryPatterns ,classes:[],styles:{},label:"Name", id="", value=null, validation:""},
+                
 
 ]
