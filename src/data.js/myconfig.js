@@ -1,3 +1,5 @@
+import field1  from './fields1.js'
+
 
 
 const myConfig = {
@@ -10,7 +12,7 @@ const myConfig = {
     "default": "",
     "globalFormClasses":[],
     "globalFormStyles":{},
-    "fields": "./fields.js"
+    "fields": field1
 }
 
 export default myConfig

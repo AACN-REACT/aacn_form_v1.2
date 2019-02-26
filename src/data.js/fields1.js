@@ -36,6 +36,9 @@ const field1 = [
             ]},
             
             {thisfield:"message", type:"textbox", patterns:countryPatterns ,classes:[],styles:{},label:"Name", id="", value=null, validation:""},
+            {thisfield:"favourite", type:"textbox", options:myautoselect, classes:[],styles:{},label:"Name", id="", value=null, validation:""},
                 
 
 ]
+
+export default field1
