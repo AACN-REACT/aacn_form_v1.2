@@ -13,9 +13,11 @@
 
 The utility library is  a collection of utility functions, each file should contain annotation explaining what purpose it serves.
 
-1. <u> promisePollyFill.js </u> :  <i> A pollyfill for promises and fetch, this will requre es6-promise and whatwg-fetch packages to be installed </i>
+1. <u> promise-pollyFill.js </u> :  <i> A pollyfill for promises and fetch, this will requre es6-promise and whatwg-fetch packages to be installed </i>
 
 
-2. <u> multiMount.js </u> :  <i> Pass in component and element id identifier , will  mount the each component with identifier appearing in its id</i>
+2. <u> multi-mount.js </u> :  <i> Pass in component and element id identifier , will  mount the each DOM element with matching id with a component tree</i>
 
+3. <u> sanitize-.js </u> :  <i> Pass in config object and autmatically correct it , or throw contextual error if cannot be corrected, returns new config</i>
 
+4. <u> is-IE11.js </u> :  <i> A quick check to see if the host environemnt is internet explorer 11 or not</i>

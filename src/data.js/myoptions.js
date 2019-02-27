@@ -16,19 +16,19 @@ const fruits = [
   const countries =  [   {
         name: "USA",
         selected: true, 
-        key: "222",
+        key: "001",
 
         value: "USA"
       },
       {
         name: "UK",
-        key: "333",
+        key: "002",
 
         value: "UK"
       },
       {
         name: "CANADA",
-        key: "444",
+        key: "003",
 
         value: "CAN"
       }
@@ -37,48 +37,48 @@ const fruits = [
 
 const states = [
     { name: "Manchester",
-      Parentkey: "333",
+      Parentkey: "002",
       selected:true,
-      key: "005",
+      key: "001",
       value: "MAN"
     },
     { name: "Liverpool",
-    Parentkey: "333",
-    key: "006",
+    Parentkey: "002",
+    key: "002",
     value: "LVP"
   },
   {
     name: "California",
-    Parentkey: "222",
+    Parentkey: "001",
     selected:true,
-    key: "001",
+    key: "003",
     value: "CA"
   },
   {
     name: "Texas",
-    Parentkey: "222",
+    Parentkey: "001",
     key: "004",
     value: "TEX"
   },
   {
     name: "London",
-    Parentkey: "333",
+    Parentkey: "002",
 
-    key: "002",
+    key: "005",
     value: "LON"
   },
   {
     name: "Ontario",
-    Parentkey: "444",
+    Parentkey: "003",
 
-    key: "007",
+    key: "006",
     value: "ONT"
   },
   {
     name: "Montreal",
-    Parentkey: "444",
+    Parentkey: "003",
     selected:true,
-    key: "003",
+    key: "007",
     value: "MONT"
   },
   
@@ -165,6 +165,15 @@ const flowers =  [
 ]
 
 
-const radioOptions = [
-    {value:"state 1",parentykey:}
+const rooms = [
+    {name:"Presidential", value:"PRS", key:"001",parentykey:"003"},
+    {name:"Ambassador", value:"ABD", key:"002",parentykey:"003"},
+    {name:"Executive", value:"ABD", key:"003",parentykey:"003"},
+    {name:"Suite", value:"SUI", key:"004",parentykey:"001"},
+    {name:"Honeymoon", value:"HON", key:"005",parentykey:"001"},
+    {name:"Family", value:"FAM", key:"006",parentykey: ["001", "003"]},
+    {name:"Single", value:"SIN", key:"007",parentykey: ["001", "003"]},
+    {name:"Economy", value:"ECO", key:"008",parentykey: ["001", "003"]},
 ]
+
+export {rooms,flowers,countries,states,fruits,bands}
