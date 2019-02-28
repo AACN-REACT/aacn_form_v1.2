@@ -9,7 +9,7 @@ const myConfig = {
                   "put": "https://testendpoint.free.beeceptor.com",
                   "delete":"https://testendpoint.free.beeceptor.com",
                   "patch":"https://testendpoint.free.beeceptor.com"},
-    "default": "",
+    "type": "",
     "globalFormClasses":[],
     "globalFormStyles":{},
     "fields": field1
