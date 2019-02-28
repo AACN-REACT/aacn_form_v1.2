@@ -75,7 +75,7 @@ checkGaps([returnedConfig,formType])
 
 
    //here we are defining a function that will check for any missing fields which will then be filled
-   function checkGaps([config, type]) {
+ export   function checkGaps([config, type]) {
     
             let filledFields = {}
             //let exisitingFields = Object.keys(returnedConfig); //extract the field names in the passed down config
@@ -98,7 +98,7 @@ checkGaps([returnedConfig,formType])
                 
             }
             else {
-                let exisitingFields = Object.keys(config); //extract the field names in the passed down config
+                //let exisitingFields = Object.keys(config)?Object.keys(config):[]; //extract the field names in the passed down config
                 
                 
 
