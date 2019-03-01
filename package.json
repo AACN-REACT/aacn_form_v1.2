@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "es6-promise": "^4.2.6",
+    "fsevents": "^1.2.7",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",

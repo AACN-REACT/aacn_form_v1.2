@@ -6,7 +6,7 @@ export default function sanitizeConfig(input) {
     formType = [];
   if (!input) {
     throw ReferenceError(
-      "Please pass in a configuartion object or JSON or an array describing the default form "
+      "Please pass in a configuartion object or JSON or an array describing the default form"
     );
   }
 
