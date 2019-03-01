@@ -2,11 +2,6 @@ import React, {useState, useReducer, useContext, useRef,useEffect,createContext,
 import ReactDOM from 'react-dom';
 
 
-function  generateInitialState(fields){
-
-
-
-}
 
 function generateMarkup (fields){
 
@@ -17,3 +12,8 @@ function generatePayload(state, sanitizedConfig){
 
 }
 
+
+
+
+
+export {generateInitialState}

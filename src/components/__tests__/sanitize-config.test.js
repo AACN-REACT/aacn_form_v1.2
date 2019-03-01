@@ -9,15 +9,20 @@ import  sanitizeConfig,{checkGaps} from '../../utils/sanitize-config'
 
 
 
+// const myMock = jest.fn((x)=>x+5)
 
+// console.log("this is my mock function:", myMock(79))
 
-// check sanitizeConfig will generate a config from an array of just form type and url = ['formtype','url']
+//  1. check sanitizeConfig will generate a config from an array of just form type and url = ['formtype','url']
 test("check array address",()=>{
 
 expect(sanitizeConfig(["address","http://thing.com/address"]))
-.toEqual({type:"address", title:{text:"Address Form", classes:["form-title"],styles:{} }, endpoints:{get:"http://thing.com/address"}})
+.toEqual({type:"address", title:{text:"Address Form", classes:["form-title"], styles:{} }, endpoints:{get:"http://thing.com/address"}})
 
 } )
+
+
+// 2. Check sanitizeConfig will generate correct config for card default 
 
 test("check array card",()=>{
 
@@ -28,9 +33,25 @@ test("check array card",()=>{
 
 
 
-// check sanitizeConfig throwing an error on a string
+    // 3. throw error on plain string, function needs to be wrapped before passing to expect
+test("throw error on plain string entry", ()=>{
 
-// test("throws on non json string",()=>{
 
-//     expect(sanitizeConfig("random string"))
-//     .toThrow()})
+    expect(()=>sanitizeConfig("some string")).toThrow(SyntaxError)
+})
+
+
+
+//  4. throw error on incorrect url format for get property
+test("throw error on non url for get value", ()=>{
+
+expect(()=>{sanitizeConfig(["address", "dfs"])}).toThrow()
+})
+
+//5. throw error on incorrect default form type property
+
+test("throw error on non url for get value", ()=>{
+
+    expect(()=>{sanitizeConfig(["adres", "http://thing.com/address"])}).toThrow()
+    })
+    
