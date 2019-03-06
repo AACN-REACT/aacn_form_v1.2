@@ -9,11 +9,19 @@ function generateMarkup (config){
     
 const formFields = config.fields;
 let Markup =[]
+//let temp =  writeToState(formFields,Markup,true)
 
+let finallArr = writeToState(formFields,Markup,true).map(el=>ElementContainer[el[Object.keys(el)[0]].type]).filter(el=>el!==undefined)
 
-return writeToState(formFields,Markup,true)
+let newArr= []
+finallArr.forEach(el=>newArr.push(el(el)))
+
+console.log(newArr)
+return newArr
+
+};
     
-    }
+
 
 
 export default generateMarkup

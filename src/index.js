@@ -4,9 +4,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import AACNFORM from './components/organisms/aacnform'
-import myConfig from './data/myconfig'
+import myConfig from './data/myconfig';
+import promisePolyFill from './utils/promise-pollyfill'
 //this is where we will compile our form , it will form the starting point for our component to be inserted
-
+promisePolyFill()
 function App(props){
 
    return (

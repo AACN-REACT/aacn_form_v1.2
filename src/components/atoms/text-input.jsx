@@ -6,7 +6,7 @@ function TextInput(props) {
 
 
     return (
-        <input value  type="text" length={props.length}   />
+        <input {...props}   />
     )
 
     

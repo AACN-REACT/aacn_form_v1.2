@@ -7,7 +7,8 @@ const ElementContainer = {
 
     container: <div> this is  a test jsx component </div>,
     text: (props)=><TextInput {...props} />,
-    select: (props)=> <SelectInput {...props} />
+    select: (props)=> <TextInput {...props} />,
+    radio: (props)=> <TextInput{...props} />
 
 }
 

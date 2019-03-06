@@ -10,25 +10,19 @@ import generateInitialState from '../../utils/generate-initial-state';
 
 
 
-function generatePayload(state, sanitizedConfig){
-
-}
 
 
 
-function AACNFORM ({config}){
+
+function FormWrapper({config, comp}){
 
 
 
-    return (
-        <form>
-        {JSON.stringify(generateInitialState(config),null,2)},
-        {generateMarkup(config)}
 
-        </form>
-    )
+//we dont want this function being run on every render so we will use a usEffect Hook that we can run just the once by passingin an empty array 
+//as the second argument
+
+
 
 
 }
-
-export default AACNFORM
