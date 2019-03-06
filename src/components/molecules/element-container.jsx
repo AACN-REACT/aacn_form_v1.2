@@ -6,8 +6,8 @@ import SelectInput from '../atoms/select-input'
 const ElementContainer = {
 
     container: <div> this is  a test jsx component </div>,
-    text: <TextInput />,
-    select: <SelectInput />
+    text: (props)=><TextInput {...props} />,
+    select: (props)=> <SelectInput {...props} />
 
 }
 

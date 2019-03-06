@@ -24,6 +24,7 @@ function AACNFORM ({config}){
         <form>
         {JSON.stringify(generateInitialState(config),null,2)},
         <pre>{JSON.stringify(generateMarkup(config), null,"\t")} </pre>
+
         </form>
     )
 
