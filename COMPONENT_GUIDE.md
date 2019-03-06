@@ -21,3 +21,20 @@ The utility library is  a collection of utility functions, each file should cont
 3. <u> sanitize-.js </u> :  <i> Pass in config object and autmatically correct it , or throw contextual error if cannot be corrected, returns new config</i>
 
 4. <u> is-IE11.js </u> :  <i> A quick check to see if the host environemnt is internet explorer 11 or not</i>
+
+
+....
+
+<h2><b> COMPONENTS </b> </h2>
+
+
+ Components will be functions and where state is needed to be persisted we shall use the useReducer and useContext hook to pass down state through the component tree.
+
+
+**AACNFORM**
+  We will have a AACNFORM component which will take a config object and generate our form. As long as the correct fields are defined in the config object
+
+
+  **ElementContainer**
+
+  This is the compound component that holds the individual field components. This is called by AACNFORM where a function will loop

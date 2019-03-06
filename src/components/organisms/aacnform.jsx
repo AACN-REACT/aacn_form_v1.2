@@ -6,6 +6,7 @@ import ElementContainer from '../molecules/element-container'
 //import utils
 
 import generateMarkup from '../../utils/generate-markup'
+import generateInitialState from '../../utils/generate-initial-state';
 
 
 
@@ -21,7 +22,8 @@ function AACNFORM ({config}){
 
     return (
         <form>
-        {JSON.stringify((generateMarkup(config.fields)).values(),0,2)}
+        {JSON.stringify(generateInitialState(config),0,2)},
+       {/* {JSON.stringify(generateMarkup(config),0,2)} */}
         </form>
     )
 

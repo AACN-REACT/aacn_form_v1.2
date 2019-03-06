@@ -5,12 +5,14 @@ import ElementContainer from '../components/molecules/element-container'
 
 
 
-function generateMarkup (fields){
+function generateMarkup (config){
     
-let empty = []
-let Markup = writeToState(fields,empty,true)
-console.log("tempObj:", Markup)
-
+const formFields = config.fields;
+let Markup =[]
+formFields.forEach(field => {
+    Markup = [...Markup, ...writeToState(field,Markup,true)]
+    
+});
 
 return Markup
     
