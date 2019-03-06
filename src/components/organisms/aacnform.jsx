@@ -23,7 +23,7 @@ function AACNFORM ({config}){
     return (
         <form>
         {JSON.stringify(generateInitialState(config),0,2)},
-       {/* {JSON.stringify(generateMarkup(config),0,2)} */}
+        {JSON.stringify(generateMarkup(config),0,2)} 
         </form>
     )
 

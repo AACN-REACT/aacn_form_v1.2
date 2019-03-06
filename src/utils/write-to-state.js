@@ -4,13 +4,15 @@ function writeToState ( fields,state,markup) {
 
 
     if(markup){
+        console.log("MARKUP")
         fields.forEach(field=>
             field.type==="container"? 
             state = [...state,...writeToState(field["contents"],state,true)]:
-             state = [...state, ...checkField(field,true)] )
+            state = [...state, ...checkField(field,true)] )
         }
-    
-    else {
+        
+        else {
+            console.log("PAYLOAD STATE")
         fields.forEach(field=>
             field.type==="container"? 
             state = {...state,...writeToState(field["contents"],state)}:
