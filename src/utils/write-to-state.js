@@ -7,7 +7,7 @@ function writeToState ( fields,state,markup) {
         console.log("MARKUP")
         fields.forEach(field=>
             field.type==="container"? 
-            state = [...state,...writeToState(field["contents"],state,true)]:
+            state = [...state,...[{"container": writeToState(field["contents"],[],true)}] ]:
             state = [...state, ...checkField(field,true)] )
         }
         

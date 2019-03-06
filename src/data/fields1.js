@@ -15,7 +15,7 @@ const field1 = [
 
 
                 {thisfield:"container2", type:"container", classes:[],style:{},
-                                    contents:[ {thisfield:"appartment", type:"number", length:null, classes:[],styles:{},
+                                    contents:[ {thisfield:"appartment22", type:"number", length:null, classes:[],styles:{},
                                                 label:"House/Apartment number", placeholder:"house/apt number",  id:"", value:null, validation:""},
         
                                                 {thisfield:"street", type:"text", classes:[],styles:{},label:"street", id:"",

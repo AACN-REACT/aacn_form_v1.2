@@ -9,12 +9,9 @@ function generateMarkup (config){
     
 const formFields = config.fields;
 let Markup =[]
-formFields.forEach(field => {
-    Markup = [...Markup, ...writeToState(field,Markup,true)]
-    
-});
 
-return Markup
+
+return writeToState(formFields,Markup,true)
     
     }
 
