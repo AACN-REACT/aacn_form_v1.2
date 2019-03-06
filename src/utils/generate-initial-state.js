@@ -1,4 +1,5 @@
-import checkField from './check-field.js'
+
+import writeToState from './write-to-state.js'
 
 
 
@@ -6,16 +7,7 @@ export default function  generateInitialState(config){
 
     const formFields = config.fields;
     const {title, endpoints, globalClasses, globalStyles} = config // spread with shortcut object names may not work with ie11
-    
-    
 
-    
-    let  state = {}; 
-    
-    function writeToState ( fields,state ) {
-    fields.forEach(field=>field.type==="container"? state = {...state,...writeToState(field["contents"],state)}: state = {...state, ...checkField(field) } )
-    return state
-    }
-    
+    let  state = {};     
     return writeToState(formFields,state)
     }

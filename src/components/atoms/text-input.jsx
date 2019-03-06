@@ -1,13 +1,15 @@
 import React, {useConext, useReducer, useRef, Component } from 'react';
 
 
-function TextInput() {
+function TextInput(props) {
 
 
 
     return (
-        <input value = {} type="text" length={props.length} required={} className = {} style ={} />
+        <input value  type="text" length={props.length}   />
     )
 
     
 }
+
+export default TextInput

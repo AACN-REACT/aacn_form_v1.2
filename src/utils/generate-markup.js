@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
+import checkField from './check-field.js'
+import writeToState from './write-to-state.js'
 import ElementContainer from '../components/molecules/element-container'
 
 
 
 function generateMarkup (fields){
     
-        let markup = fields.map(el=><ElementContainer[el.type]/> )
+let empty = []
+let Markup = writeToState(fields,empty,true)
+console.log("tempObj:", Markup)
 
-        return markup 
+
+return Markup
     
     }
 
 
+export default generateMarkup

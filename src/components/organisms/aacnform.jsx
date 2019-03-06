@@ -20,9 +20,9 @@ function AACNFORM ({config}){
 
 
     return (
-        <>
-        generateMarkup(config.fields)
-        </>
+        <form>
+        {JSON.stringify((generateMarkup(config.fields)).values(),0,2)}
+        </form>
     )
 
 
