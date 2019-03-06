@@ -3,13 +3,17 @@ import React,{useState, useContext} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-
+import AACNFORM from './components/organisms/aacnform'
+import myConfig from './data/myconfig'
 //this is where we will compile our form , it will form the starting point for our component to be inserted
 
 function App(props){
 
-   if(props.thing) {const [count,setCount] = useState(0) }
+   return (
+       <AACNFORM config={myConfig} />
+   )
 }
+
 
 
 ReactDOM.render(<App />, document.getElementById('root'));

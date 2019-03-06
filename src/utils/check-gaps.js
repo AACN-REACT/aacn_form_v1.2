@@ -27,7 +27,7 @@ export default function checkGaps(config, type) {
           break;
         default:
           throw SyntaxError(
-            "'type' value passed to 'checkGaps' doesn not \n meet any default type",
+            "'type' value passed to 'checkGaps' does not \n meet any default type",
             type[0]
           );
       }
@@ -37,7 +37,7 @@ export default function checkGaps(config, type) {
         config.title = { text: "Form", classes: "form-title", style: {} };
       }
       if (!"endpoints" in config || config.endpoints === "") {
-        throw ReferenceError("You need to specify endpoints, especically 'get' ");
+        throw ReferenceError("You need to specify at least a 'get' endpoint ");
       }
   
       if (!"type" in config && (!"fields" in config || config.fields === "")) {

@@ -1,4 +1,7 @@
-import  generateInitialSate  from '../../utils/generate-initial-state';
+import  generateInitialState  from '../../utils/generate-initial-state';
+import  checkField  from '../../utils/check-field';
+import  {rooms,flowers,countries,states,fruits,bands} from '../../data/myoptions';
+import  myConfig from '../../data/myconfig'
 
 
 
@@ -46,9 +49,9 @@ const field1 = [
 
 
 
-test("correct state object" ,()=>{
+test("create state object" ,()=>{
 
-    expect(generateInitialSate(field1))
+    expect(generateInitialState(myConfig))
     .toEqual({appartment: null,
         button: null,
         country: null,
