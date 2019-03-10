@@ -37,11 +37,6 @@ console.log("NEW FORM STATE:", formState)
     return (
        <div>
        <FormContext.Provider value={formState} >    
-       <button name="terry" onClick={(ev)=>{dispatch({payload: {name:ev.target.name}})}} > dispatch</button>
-       <select name="bands" onChange={(ev)=>{dispatch({payload: {[ev.target.name]:ev.target.value}})}} > 
-       <option value="stone roses">Stone roses</option>
-       <option value="smiths"> Smiths </option>
-       </select>
        {generateMarkup(config)}
        <JSONCOMP />
        </FormContext.Provider >    

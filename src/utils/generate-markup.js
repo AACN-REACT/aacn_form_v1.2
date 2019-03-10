@@ -9,15 +9,19 @@ function generateMarkup (config){
     
 const formFields = config.fields;
 let Markup =[]
-//let temp =  writeToState(formFields,Markup,true)
+let temp =  writeToState(formFields,Markup,true)
+console.log("TEsMPP", temp)
 let newArr= []
-let finallArr = writeToState(formFields,Markup,true).
-                map(field=>(ElementContainer[field[Object.keys(field)[0]].type])(field)).
-                filter(component=>component!==undefined).
-                forEach(el=>newArr.push(el))
-return newArr
+let finalArr = writeToState(formFields,Markup,true);
+console.log("FinalArr",finalArr)
+finalArr = finalArr.map(field=>field[Object.keys(field)[0]].type).
+                    map(type=>{console.log("SS", type); return typeof ElementContainer[type]==="function"?
+                    ElementContainer[type]():ElementContainer[type]})
+                //filter(component=>component!==undefined)
+console.log("Gnerate Markup" , finalArr)                
+return finalArr
 
-};
+}
     
 
 
