@@ -36,9 +36,11 @@ console.log("NEW FORM STATE:", formState)
 
     return (
        <div>
-       <FormContext.Provider value={formState} >    
+       <FormContext.Provider value={formState} > 
+       <form >   
        {generateMarkup(config)}
        <JSONCOMP />
+       </form >   
        </FormContext.Provider >    
        </div>
 
