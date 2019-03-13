@@ -3,8 +3,10 @@ import React, { useContext, Component } from 'react';
 
 export default function SelectInput(props){
 
-    function filterOptions(options,parent,){
-
+    function filterOptions( state, options, parent){
+     if(parent){
+            
+     }
 
     }
 

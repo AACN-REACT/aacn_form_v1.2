@@ -12,7 +12,7 @@ const field1 = [
                                                             contents:[ {thisfield:"appartment22", type:"number", length:null, classes:[],styles:{},
                                                                         label:"House/Apartment number", placeholder:"house/apt number",  id:"", value:null, validation:""},
                                 
-                                                                        {thisfield:"street", type:"text", classes:[],styles:{},label:"street", id:"",
+                                                                        {thisfield:"street", placeholder:"street" , type:"text", classes:[],styles:{},label:"street", id:"",
                                                                          value:null, validation:""},
                                                                     ]},
 

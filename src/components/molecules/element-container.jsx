@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import TextInput from '../atoms/text-input'
 import SelectInput from '../atoms/select-input'
 import ContainerInput from '../atoms/container-input'
+import NumberInput from '../atoms/number-input';
+import Heading from '../atoms/heading';
 
 
 const ElementContainer = {
-    number: "to be filled",
+    number: (props)=><NumberInput {...props}/>,
     container: (props)=><ContainerInput {...props} />,
     text: (props)=><TextInput {...props} />,
+    heading:(props)=><Heading {...props} />,
    // select: (props)=> <SelectInput {...props} />,
     radio: (props)=> <TextInput {...props} />,
     telephone: (props)=> <TextInput {...props} />,
