@@ -4,8 +4,10 @@ import {rooms,flowers,countries,states,fruits,bands}  from './myoptions.js'
 
 const field1 = [
 
-                {thisfield:"container1", type:"container", classes:[],style:{},
-                            contents:[  {thisfield:"name", type:"text", length:null , 
+                {thisfield:"container1", type:"container", classes:["container"],style:{},
+                            contents:[  
+                                        {thisfield:"name heading" , type:"heading", value:"NAMES"},
+                                        {thisfield:"name", type:"text", length:null , 
                                         classes:[],styles:{},label:"First name",placeholder:"first name", 
                                         id:"", value:null, validation:""},
                                         {thisfield:"container2", type:"container", classes:[],style:{},
@@ -34,7 +36,11 @@ const field1 = [
                 {thisfield:"message", type:"textbox", patterns:"" ,classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 
                 {thisfield:"buttons", type:"container", classes:[],style:{},
-                 contents: [ {thisfield:"button1", type:"save", classes:[],styles:{},label:"Save", id:"", value:null, validation:""},
+                 
+                 contents: [
+                     
+                {thisfield:"button1", type:"heading", classes:[],styles:{},label:"Save", id:"", value:"This Is the Heading", validation:""},
+                {thisfield:"button1", type:"save", classes:[],styles:{},label:"Save", id:"", value:null, validation:""},
                 {thisfield:"button2", type:"submit", classes:[],styles:{},label:"Submit", id:"", value:null, validation:""},
                 {thisfield:"button3", type:"clear", classes:[],styles:{},label:"clear", id:"", value:null, validation:""}
             ]},
