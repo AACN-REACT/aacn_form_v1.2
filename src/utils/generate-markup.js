@@ -15,8 +15,7 @@ ElementContainer[type[0]](type[1]):ElementContainer[type[0]]}) )}
 function generateMarkup (config){
     
 const formFields = config.fields || config;
-let Markup =[]
-let newArr= []
+let Markup =[], newArr= [];
 let finalArr = writeToState(formFields,Markup,true);
 console.log("FinalArr",finalArr)
 finalArr = extractFields(finalArr)
