@@ -6,7 +6,7 @@ import ContainerInput from '../atoms/container-input'
 
 const ElementContainer = {
     number: "to be filled",
-    //container: (props)=><ContainerInput {...props} />,
+    container: (props)=><ContainerInput {...props} />,
     text: (props)=><TextInput {...props} />,
    // select: (props)=> <SelectInput {...props} />,
     radio: (props)=> <TextInput {...props} />,

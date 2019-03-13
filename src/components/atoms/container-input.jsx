@@ -9,9 +9,9 @@ function ContainerInput(props){
     console.log("CONTAINER FIRED",props)
     return (
     <div classNames={props.classes}> 
-    {generateMarkup(props.contents)}
+    {generateMarkup(props)}
     </div>
     )
-
+    
 }
 export default ContainerInput
