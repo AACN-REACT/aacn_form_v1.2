@@ -7,12 +7,13 @@ import ElementContainer from '../molecules/element-container'
 
 import generateMarkup from '../../utils/generate-markup'
 import generateInitialState from '../../utils/generate-initial-state';
+import formReducer from '../../utils/reducers/form-reducer';
+import formAction from '../../utils/actions/form-actions';
+import {DispatchState,FormPayload} from '../../utils/contexts/form-contexts';
+// const formReducer = function(state,action){
+//     return {...state,...action.payload}
+// }
 
-const formReducer = function(state,action){
-    return {...state,...action.payload}
-}
-
-const FormContext = createContext()
 
 function generatePayload(state, sanitizedConfig){
 
@@ -20,15 +21,18 @@ function generatePayload(state, sanitizedConfig){
 
 function JSONCOMP (props){
 
-   const  formState = useContext(FormContext)
+   const  dispatch = useContext(DispatchState)
+   const  formState = useContext(FormPayload)
     return (
+        <>
         <pre> {JSON.stringify(formState,null,2)} </pre>
+        </>
     )
 }
 
 function AACNFORM ({config}){
 
-const[formState, dispatch] = useReducer(formReducer,generateInitialState(config))
+const[formState, dispatchState] = useReducer(formReducer,generateInitialState(config))
 
 console.log("FORM STATE:", formState)
 
@@ -36,12 +40,15 @@ console.log("NEW FORM STATE:", formState)
 
     return (
        <div>
-       <FormContext.Provider value={formState} > 
-       <form >   
-       {generateMarkup(config)}
-       <JSONCOMP />
-       </form >   
-       </FormContext.Provider >    
+       <FormPayload.Provider value={formState} > 
+       <DispatchState.Provider value={dispatchState} > 
+    
+        <form >   
+        {generateMarkup(config)}
+        <JSONCOMP />
+        </form >   
+       </DispatchState.Provider >
+       </FormPayload.Provider >    
        </div>
 
 
