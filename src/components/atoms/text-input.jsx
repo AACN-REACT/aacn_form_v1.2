@@ -9,7 +9,10 @@ function TextInput(props) {
 const dispatchValue = useContext(DispatchState)
 console.log("DISPASTCH VALUE",dispatchValue)
     return (
+        <label >
+            {props.label}
         <input {...props} onChange = {(ev)=>dispatchValue(formAction("text",props.thisfield,ev.target.value))}  />
+        </label>
     )
 
     

@@ -2,5 +2,5 @@ import React from 'react';
 
 export default function TextBox(props){
 
-    return <textarea width={500} />
+    return <label >{props.label}<textarea width={500} /></label>
 }
