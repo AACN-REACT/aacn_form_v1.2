@@ -11,8 +11,9 @@ export default function SelectInput(props){
     function filterOptions( state, options, parent){
      if(parent){
             let key = state[parent]
-            console.log("PARENT",props.thisfield,options.filter(el=>el["ParentKey"] === [state[parent]][0]).map(el=>el.name))
-            return options.filter(el=>el.parentKey === [state[parent]][0]).map(el=><option>{el.name || el}</option>)
+         
+            console.log("PARENT",props.thisfield,options.filter(el=>{    console.log("PARENT 1",el["Parentkey"]); return el["Parentkey"] === [state[parent]][0]}).map(el=>el.name))
+            return options.filter(el=>el["Parentkey"] === [state[parent]][0]).map(el=><option>{el.name || el}</option>)
      }
      else {
          return options.map(el=><option>{el.name || el}</option>)
