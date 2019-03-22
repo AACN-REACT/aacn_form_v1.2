@@ -26,10 +26,10 @@ const field1 = [
         
 
  
-                {thisfield:"country", type:"select", key:"111",  options:countries , classes:[],styles:{},label:"Country", id:"", value:null, validation:""},
-                {thisfield:"state", parent:"country" , key:"222", type:"select",  options:states,  classes:[],styles:{},label:"States", id:"", value:null, validation:""},
-                {thisfield:"bands", parent:"states" , key:"333", type:"select",  options:bands,  classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
-                {thisfield:"name", parent:"states",  key:"444", type:"radio", options:rooms, classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
+                {thisfield:"country", type:"select", idkey:"111",  options:countries , classes:[],styles:{},label:"Country", id:"", value:null, validation:""},
+                {thisfield:"state", parent:"country" , idkey:"222", type:"select",  options:states,  classes:[],styles:{},label:"States", id:"", value:null, validation:""},
+                {thisfield:"bands", parent:"states" , idkey:"333", type:"select",  options:bands,  classes:[],styles:{},label:"Bands", id:"", value:null, validation:""},
+                {thisfield:"name", parent:"states",  idkey:"444", type:"radio", options:rooms, classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 {thisfield:"telephone", type:"telephone", parent:"country", patterns:"", classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 
                 {thisfield:"flower", type:"autofill", options:flowers, classes:[],styles:{},label:"Save", id:"", value:null, validation:""},

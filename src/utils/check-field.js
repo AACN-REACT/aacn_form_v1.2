@@ -10,7 +10,7 @@
         else { return( 
             markup?[{[field.thisfield]:field}]:
             field.type==="select"?
-            {[field.thisfield]:[field.key, field.value]}:
+            {[field.thisfield]:[field.idkey, field.value]}:
             {[field.thisfield]:field["value"] })
             } }
           catch (e) { console.log(e) }

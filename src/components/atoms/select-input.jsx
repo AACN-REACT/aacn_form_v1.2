@@ -5,22 +5,22 @@ import { DispatchState} from '../../utils/contexts/form-contexts';
 
 
 export default function SelectInput(props){
+  
     let state = useContext(FormPayload)
     let dispatch = useContext(DispatchState)
-
-    function filterOptions( state, options, parent){
+    console.log("THIS IS A SELECT:", state, props.options, props.parent)
+    function filterOptions( formstate, options, parent){
      if(parent){
-            let key = state[parent]
          
-            console.log("PARENT",props.thisfield,options.filter(el=>{    console.log("PARENT 1",el["Parentkey"]); return el["Parentkey"] === [state[parent]][0]}).map(el=>el.name))
-            return options.filter(el=>el["Parentkey"] === [state[parent]][0]).map(el=><option>{el.name || el}</option>)
+            console.log("PARENT", options.forEach(el=>{console.log("PARENT 1",el["Parentkey"], ">>" , [formstate[parent]][0], "<<")}   ));
+            return options.filter(el=>el["Parentkey"] === [formstate[parent]][0]).map(el=><option key={el.key}>{el.name || el}</option>)
      }
      else {
-         return options.map(el=><option>{el.name || el}</option>)
+         return options.map(el=><option key={el.key}>{el.name || el}</option>)
      }
 
     }
 
-    return <label>{props.label || props.thisfield}<select onChange={e=>dispatch(formAction("select",props.thisfield, e.target.value))}>{filterOptions(state,props.options,props.parent)}</select></label>
+    return <label>{props.label || props.thisfield}<select onChange={e=>dispatch(formAction("select",props.thisfield, [e.target.value, e.target.key ]))}>{filterOptions(state,props.options,props.parent)}</select></label>
 
 }
