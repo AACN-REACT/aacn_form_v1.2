@@ -1,7 +1,7 @@
     
     function checkField(field,markup){
-        if (field.thisfield==="select"){
-          console.log("This is a select :",field.thisfield, field.thisfield.key)
+        if (field.type==="select"){
+          console.log("ZZZ :","<<",field.thisfield,">>" ,field.options)
         }
         
             try {
@@ -10,7 +10,7 @@
         else { return( 
             markup?[{[field.thisfield]:field}]:
             field.type==="select"?
-            {[field.thisfield]:[field.idkey, field.value]}:
+            {[field.thisfield]:[field.idkey, field.options.filter(el=>el.selected)[0]]}:
             {[field.thisfield]:field["value"] })
             } }
           catch (e) { console.log(e) }
