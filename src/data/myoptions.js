@@ -15,7 +15,7 @@ const fruits = [
 
   const countries =  [   {
         name: "USA",
-        selected: true, 
+       
         key: "001",
 
         value: "USA"
@@ -23,13 +23,13 @@ const fruits = [
       {
         name: "UK",
         key: "002",
-
+        
         value: "UK"
       },
       {
         name: "CANADA",
         key: "003",
-
+        selected: true, 
         value: "CAN"
       }
     ]

@@ -27,10 +27,11 @@ export default function SelectInput(props){
      }
 
     }
-
+    //let initialSelected = props.options.filter(el=>el.Parentkey?el.Parentkey===options.filter())
+    //useEffect(dispatch(formAction("select",props.thisfield, [e.target.value, ans[0]['key']])),[])
     return <label>{props.label || props.thisfield}<select  
     onChange={e=>{let ans = props.options.filter(el=>el.name===e.target.value);
-        dispatch(formAction("select",props.thisfield, [e.target.value, ans[0]['key']]));filterOptions(state,props.options,props.parent) } }>
+        dispatch(formAction("select",props.thisfield, [e.target.value, ans[0]['key']])); } }>
         {filterOptions(state,props.options,props.parent)}
         </select>
         </label>
