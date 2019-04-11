@@ -7,18 +7,17 @@ const myref = React.createRef();
 
 
 export default function SelectInput(props){
-   console.log("PPPROPS:" , props)
+
     let state = useContext(FormPayload)
     let dispatch = useContext(DispatchState)
-    console.log("THIS IS A SELECT:", state, props.options, props.parent)
-
 
 
     function filterOptions( formstate, options, parent){
-       console.log("parent formstatae:",formstate)
+
+
      if(parent){
          console.log("parent key",formstate[parent] )
-        let thiskey = formstate[parent][1].key
+        let thiskey = formstate[parent][1]
         console.log("parent key key", thiskey,options)
      return options.filter(el=>el.Parentkey===thiskey).map(el=><option >{el.name || el}</option>);
      }

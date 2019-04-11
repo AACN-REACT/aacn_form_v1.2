@@ -6,7 +6,7 @@ function writeToState ( fields,state,markup) {
     if(markup){
         console.log("MARKUP", state.constructor)
         fields.forEach(field=>
-            state = [...state, ...checkField(field,true)] )
+            state = [...state, ...checkField(fields, field,true)] )
         }
         
         else {
@@ -14,7 +14,7 @@ function writeToState ( fields,state,markup) {
         fields.forEach(field=>
             field.type==="container"? 
             state = {...state,...writeToState(field["contents"],state)}:
-             state = {...state, ...checkField(field)} )
+             state = {...state, ...checkField(fields, field)} )
         }
      console.log("THIS IS THE STATE:", state)   
     return state

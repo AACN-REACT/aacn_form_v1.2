@@ -28,7 +28,7 @@ const field1 = [
  
                 {thisfield:"country", type:"select", idkey:"111",  options:countries , classes:[],styles:{},label:"Country", id:"", value:null, validation:""},
                 {thisfield:"state", parent:"country" , idkey:"222", type:"select",  options:states,  classes:[],styles:{},label:"States", id:"", value:null, validation:""},
-                {thisfield:"bands", parent:"country" , idkey:"333", type:"select",  options:bands,  classes:[],styles:{},label:"Bands", id:"", value:null, validation:""},
+                {thisfield:"bands", parent:"state" , idkey:"333", type:"select",  options:bands,  classes:[],styles:{},label:"Bands", id:"", value:null, validation:""},
                 {thisfield:"name", parent:"country",  idkey:"444", type:"radio", options:rooms, classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 {thisfield:"telephone", type:"telephone", parent:"country", patterns:"", classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 

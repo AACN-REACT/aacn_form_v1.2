@@ -86,18 +86,18 @@ const states = [
 ]
 const bands =  [
     { name: "Smiths",
-      Parentkey: "002",
+      Parentkey: "001",
       selected:true,
       key: "005",
       value: "MAN"
     },
     { name: "Beatles",
-    Parentkey: "002",
+    Parentkey: "001",
     key: "006",
     value: "LVP"
   },
   { name: "Cure",
-  Parentkey: "002",
+  Parentkey: "001",
   selected:true,
   key: "005",
   value: "Cure"
