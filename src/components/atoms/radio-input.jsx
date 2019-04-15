@@ -1,0 +1,36 @@
+import React, { useRef, useEffect, useContext, Component } from 'react';
+import formAction from '../../utils/actions/form-actions'
+import { FormPayload } from '../../utils/contexts/form-contexts';
+import { DispatchState} from '../../utils/contexts/form-contexts';
+
+let keyx=0
+export default function RadioInput(props){
+
+let state = useRef(FormPayload)
+let dispatch = useRef(DispatchState)
+
+function filterOptions( formstate, options, parent){
+
+    //selected={el.selected?true:false}
+ if(parent){
+     console.log("THIS RADIO SHOULD NOT HAVE A PARENT")
+     console.log("RADIO PARENT", parent, state)
+    let thiskey = formstate[parent][1]
+ return options.filter(el=>el.Parentkey===thiskey).map((el,i)=><label key={i}>{el.name} <input type="radio" name={props.thisfield} value={[el.name, el.key]} /></label>);
+ }
+ else {
+
+     return options.map((el,i)=><label key={i}>{el.name} <input type="radio" name={props.thisfield} value={[el.name, el.key]} /></label>)
+ }
+
+
+return  null
+
+}
+return <label>{props.label || props.thisfield}<div 
+onChange={e=>{
+    dispatch(formAction("radio",props.thisfield, e.target.value)); } }>
+    {filterOptions(state,props.options,props.parent)}
+    </div>
+    </label>
+}

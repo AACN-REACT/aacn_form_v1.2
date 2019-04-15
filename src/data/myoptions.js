@@ -23,13 +23,13 @@ const fruits = [
       {
         name: "UK",
         key: "002",
-        
+        selected: true, 
         value: "UK"
       },
       {
         name: "CANADA",
         key: "003",
-        selected: true, 
+
         value: "CAN"
       }
     ]

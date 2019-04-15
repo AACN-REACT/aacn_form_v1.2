@@ -15,8 +15,12 @@
         else { return( 
             markup?[{[field.thisfield]:field}]:
             field.options!==undefined?
-            {[field.thisfield]: [ filterKey!==null?field.options.filter(el=>el.Parentkey===filterKey).filter(el=>el.selected?el.selected:el)[0].name: field.options.filter(el=>el.selected?el.selected:el)[0].name,  
-                                  filterKey?field.options.filter(el=>el.Parentkey===filterKey).filter(el=>el.selected?el.selected:el)[0].key: field.options.filter(el=>el.selected?el.selected:el)[0].key]}:
+            {[field.thisfield]: [ filterKey!==null?
+                                        field.options.filter(el=>el.Parentkey===filterKey).filter(el=>el.selected? el.selected:el)[0].name: 
+                                        field.options.filter(el=>el.selected)[0].name,
+                                  filterKey?
+                                        field.options.filter(el=>el.Parentkey===filterKey).filter(el=>el.selected?el.selected:el)[0].key: 
+                                        field.options.filter(el=>el.selected)[0].key]}:
             {[field.thisfield]:field["value"] })
             } }
           catch (e) { console.log(e) }

@@ -14,7 +14,13 @@ import generateInitialState from '../../utils/generate-initial-state';
 
 
 
-function FormWrapper({config, comp}){
+function FormWrapper(Element, {config, comp}){
+
+
+
+
+
+
 
 
 
@@ -22,7 +28,7 @@ function FormWrapper({config, comp}){
 //we dont want this function being run on every render so we will use a usEffect Hook that we can run just the once by passingin an empty array 
 //as the second argument
 
-
+return <Element config={config} />
 
 
 }

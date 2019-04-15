@@ -14,6 +14,7 @@ export default function formReducer (state,action){
             case "telephone":
             return {...state,...action.payload} 
             case "select":
+            case "radio":
             return {...state,...action.payload}
             default:
             return state
