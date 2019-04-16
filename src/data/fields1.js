@@ -32,7 +32,7 @@ const field1 = [
                 {thisfield:"name", parent:"country",  idkey:"444", type:"radio", options:rooms, classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 {thisfield:"telephone", type:"telephone", parent:"country", patterns:"", classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 
-                {thisfield:"flower", type:"radio", options:flowers, classes:[],styles:{},label:"Save", id:"", value:null, validation:""},
+                {thisfield:"flower", parent:"country",type:"radio", options:flowers, classes:[],styles:{},label:"Save", id:"", value:null, validation:""},
                 {thisfield:"message", type:"textbox", patterns:"" ,classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 
                 {thisfield:"buttons", type:"container", classes:[],style:{},
