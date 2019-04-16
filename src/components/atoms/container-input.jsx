@@ -9,7 +9,7 @@ function ContainerInput(props){
 
     console.log("CONTAINER FIRED",props)
     return (
-    <div className={props.classes}> 
+    <div className={props.classes || "form-group"}> 
     {generateMarkup(props.contents)}
     </div>
     )

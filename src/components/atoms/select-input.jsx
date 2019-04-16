@@ -28,7 +28,7 @@ export default function SelectInput(props){
     }
     //let initialSelected = props.options.filter(el=>el.Parentkey?el.Parentkey===options.filter())
     //useEffect(dispatch(formAction("select",props.thisfield, props.options.filter(el=>el.Parentkey?el.Parentkey===state[props.parent]:el)[0].name)),[state])
-    return <label>{props.label || props.thisfield}<select defaultValue={state[props.thisfield][0]?state[props.thisfield][0]:props.options.filter(el=>el.selected)[0].name}
+    return <label>{props.label || props.thisfield}  <select className={props.classes || 'form-control'} defaultValue={state[props.thisfield][0]?state[props.thisfield][0]:props.options.filter(el=>el.selected)[0].name}
     onChange={e=>{let ans = props.options.filter(el=>el.name===e.target.value);
         dispatch(formAction("select",props.thisfield, [e.target.value, ans[0]['key']])); } }>
         {filterOptions(state,props.options,props.parent)}

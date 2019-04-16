@@ -10,6 +10,6 @@ export default function ButtonReset(props){
     let state = useContext(FormPayload)
     let dispatch = useContext(DispatchState)
 
-
-    return <button className={props.classes} onClick={props.callback || dispatch()} type="number" range={props.range || 10}>SAVE</button>
+    let styles=Object.assign({},[props.styles],{margin:"5px"})
+    return <button className={props.classes || "btn btn-primary"} style={styles} onClick={props.callback} >RESET</button>
 }

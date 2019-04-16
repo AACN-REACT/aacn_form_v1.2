@@ -5,9 +5,9 @@ import { DispatchState} from '../../utils/contexts/form-contexts';
 
 
 export default function ButtonSave(props){
-
+    console.log("CLASS OF SAVE:", props.classes)
     let state = useContext(FormPayload)
     let dispatch = useContext(DispatchState)
-
-    return <button className={props.classes} onClick={props.callback} type="number" range={props.range || 10}>SAVE</button>
+    let styles=Object.assign({},[props.styles],{margin:"5px"})
+    return <button className={props.classes || "btn btn-primary"} onClick={e=>e.preventDefault()} style={styles} >SAVE</button>
 }
