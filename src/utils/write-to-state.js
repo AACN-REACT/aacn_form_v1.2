@@ -1,4 +1,4 @@
-import checkField from './check-field.js'
+import checkField from './check-fieldnew.js'
 
 function writeToState ( fields,state,markup) {
 

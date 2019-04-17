@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import checkField from './check-field.js'
+import checkField from './check-fieldnew.js'
 import writeToState from './write-to-state.js'
 import ElementContainer from '../components/molecules/element-container'
 
