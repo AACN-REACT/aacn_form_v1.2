@@ -2,7 +2,7 @@
      function findFilter(fields, field) {
       let filterKey=null;
         if (field.options){
-          if(field['parent']!==undefined){
+          if(field['parent'] !==undefined){
             filterKey= findFilter(fields, field) 
             console.log("YESS has parent", filterKey) }
 

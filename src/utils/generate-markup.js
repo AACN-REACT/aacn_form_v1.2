@@ -23,7 +23,7 @@ finalArr = extractFields(finalArr)
 //                     map(type=>{console.log("SS", type); return typeof ElementContainer[type[0]]==="function"?
 //                     ElementContainer[type[0]](type[1]):ElementContainer[type[0]]})
                 //filter(component=>component!==undefined)
-console.log("Gnerate Markup" , finalArr)                
+console.log("Generate Markup" , finalArr)                
 return finalArr
 
 }

@@ -17,7 +17,6 @@ const fruits = [
         name: "USA",
        
         key: "001",
-
         value: "USA"
       },
       {
@@ -98,14 +97,12 @@ const bands =  [
   },
   { name: "Cure",
   Parentkey: "001",
-  selected:true,
   key: "005",
   value: "Cure"
 },          
   {
     name: "Beachboys",
     Parentkey: "001",
-    selected:true,
     key: "001",
     value: "CA"
   },
@@ -124,14 +121,14 @@ const bands =  [
   },
   {
     name: "national",
-    Parentkey: "003",
+    Parentkey: "007",
 
     key: "003",
     value: "ONT"
   },
   {
     name: "They Might be Giants",
-    Parentkey: "003",
+    Parentkey: "007",
     selected:true,
     key: "003",
     value: "MONT"
