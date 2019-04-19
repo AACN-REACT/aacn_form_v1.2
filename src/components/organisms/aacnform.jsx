@@ -9,7 +9,7 @@ import generateMarkup from '../../utils/generate-markup'
 import generateInitialState from '../../utils/generate-initial-state';
 import formReducer from '../../utils/reducers/form-reducer';
 import formAction from '../../utils/actions/form-actions';
-import {DispatchState,FormPayload} from '../../utils/contexts/form-contexts';
+import {DispatchState,FormPayload,Allfields} from '../../utils/contexts/form-contexts';
 // const formReducer = function(state,action){
 //     return {...state,...action.payload}
 // }
@@ -33,7 +33,8 @@ function JSONCOMP (props){
 function AACNFORM ({config}){
 
 const[formState, dispatchState] = useReducer(formReducer,generateInitialState(config))
-
+const allfields = config.fields;
+console.log("NNNN all fields:",allfields)
 console.log("FORM STATE:", formState)
 
 console.log("NEW FORM STATE:", formState)
@@ -42,11 +43,13 @@ console.log("NEW FORM STATE:", formState)
        <div class>
        <FormPayload.Provider value={formState} > 
        <DispatchState.Provider value={dispatchState} > 
+       <Allfields.Provider value={allfields} > 
     
         <form >   
         {generateMarkup(config)}
         <JSONCOMP />
-        </form >   
+        </form > 
+        </Allfields.Provider>
        </DispatchState.Provider >
        </FormPayload.Provider >    
        </div>

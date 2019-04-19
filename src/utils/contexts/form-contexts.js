@@ -3,5 +3,6 @@ import {createContext } from 'react'
 
 const FormPayload = createContext()
 const DispatchState = createContext()
+const Allfields = createContext()
 
-export {FormPayload, DispatchState}
+export {FormPayload, DispatchState, Allfields}
