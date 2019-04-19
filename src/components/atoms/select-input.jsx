@@ -1,41 +1,48 @@
 import React, { useState, useRef, useEffect, useContext, Component } from 'react';
 import formAction from '../../utils/actions/form-actions'
-import { FormPayload } from '../../utils/contexts/form-contexts';
-import { DispatchState} from '../../utils/contexts/form-contexts';
-import { Allfields} from '../../utils/contexts/form-contexts';
+import { FormPayload, DispatchState, Allfields } from '../../utils/contexts/form-contexts';
+
 
 
 
 export default function SelectInput(props){
-    console.log("NNNN",props.thisfield,'<----------') 
-    let state = useContext(FormPayload)
-    let dispatch = useContext(DispatchState)
-    let allfields = useContext(Allfields)
-    let env="outside";
-    const [count, setCount] = useState(0)
-    let y = allfields.filter(el=>el.type===props.parent)[0].thisfield
-    let x = state[y][1]
-        console.log("NNNN parent: \n",props.options)
-    let filterkey = x || null
 
-    function filterOptions(filterkey){
-        let optionsList=props.options
-        if(x){
-            console.log("NNNN x",x)
-                optionsList = optionsList.filter(el=>el['key']===filterkey)
-        }
-        return (
-            optionsList.map(el=><option >{el.name}</option>)
-        )
-    }
-    
-    
 
-     return <label>{props.label || props.thisfield}  <select className={props.classes || 'form-control'} value={ state[props.thisfield][0]}
-    onChange={e=>{let ans = props.options.filter(el=>el.name===e.target.value);setCount(0) ;
-        dispatch(formAction("select",props.thisfield, [e.target.value, ans[0]['key']],env));} }>
-        { filterOptions(filterkey)}
-        </select>
-    </label>  
+
+    const  allfields = useContext(Allfields)
+     const dispatch = useContext(DispatchState)
+     const state = useContext(FormPayload)
+     
+console.log("NNN props \n",props.thisfield);
+console.log("NNN allfields \n", allfields);
+console.log("NNN dispatch \n", dispatch);
+console.log("NNN state \n", state);
+
+let options_list = [];
+let filter_key = null;
+
+function getFilterKey(parent,state){
+    return state[parent][1]
+}
+
+
+if(props.parent) {filter_key = getFilterKey(props.parent,state); 
+                                console.log("NNNN key", filter_key,props.options.filter(el=>el.Parentkey === filter_key))
+                                options_list = props.options.filter(el=>el.Parentkey === filter_key)}
+
+else {
+    options_list = props.options
+}
+
+let markup = options_list.map(el=><option>{el.name}</option>)
+return (
+          <div>
+                    <select defaultValue={state[props.thisfield][0]} onChange={e=>{dispatch({type:"select", payload:{[props.thisfield]:[e.currentTarget.value, options_list.filter(el=>el.name===e.currentTarget.value)[0].key] }} )}}>
+                        {markup}
+                    </select>
+
+          </div>
+)
+
 
 }
