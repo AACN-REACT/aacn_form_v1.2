@@ -6,3 +6,5 @@ const DispatchState = createContext()
 const Allfields = createContext()
 
 export {FormPayload, DispatchState, Allfields}
+
+function extractMethods() {}

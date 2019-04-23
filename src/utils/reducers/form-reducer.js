@@ -1,7 +1,4 @@
-
-
-
-
+import resetForm from '../reset-form'
 
 export default function formReducer (state,action){
 
@@ -14,8 +11,11 @@ export default function formReducer (state,action){
             case "telephone":
             return {...state,...action.payload} 
             case "select":
+            return {...state,...action.payload} 
             case "radio":
             return {...state,...action.payload}
+            case "reset":
+            return resetForm(state)
             default:
             return state
 
