@@ -1,7 +1,9 @@
 
 import {rooms,flowers,countries,states,fruits,bands}  from './myoptions.js'
 
-
+function doSave(){
+    alert("this is a external ref")
+}
 const field1 = [
 
                 {thisfield:"container1", type:"container", classes:[],style:{},
@@ -44,7 +46,7 @@ const field1 = [
                  contents: [
                      
                 {thisfield:"button1", type:"heading", classes:[],styles:{},label:"Save", id:"", value:"This Is the Heading", validation:""},
-                {thisfield:"button1", type:"save",styles:{},label:"Save", id:"", value:null, validation:""},
+                {thisfield:"button1", saveFunction: doSave, type:"save",styles:{},label:"Save", id:"", value:null, validation:""},
                 {thisfield:"button2", type:"submit", classes:[],styles:{},label:"Submit", id:"", value:null, validation:""},
                 {thisfield:"button3", type:"reset",styles:{},label:"reset", id:"", value:null, validation:""}
             ]},

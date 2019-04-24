@@ -33,6 +33,9 @@ function JSONCOMP (props){
 function AACNFORM ({config}){
 
 const[formState, dispatchState] = useReducer(formReducer,generateInitialState(config))
+
+localStorage.setItem("customer", "Donald Duck")
+
 const allfields = config.fields;
 console.log("NNNN all fields:",allfields)
 console.log("FORM STATE:", formState)

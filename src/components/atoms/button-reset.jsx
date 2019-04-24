@@ -13,5 +13,5 @@ export default function ButtonReset(props){
 
     let styles=Object.assign({},[props.styles],{margin:"5px"})
     return <button className={props.classes || "btn btn-primary"} style={styles} 
-    onClick={e=>{e.preventDefault();dispatch({type:"reset"})}} >RESET</button>
+    onClick={e=>{e.preventDefault();dispatch()}} >RESET</button>
 }

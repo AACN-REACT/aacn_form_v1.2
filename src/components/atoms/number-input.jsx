@@ -12,5 +12,5 @@ export default function NumberInput(props){
     let dispatch = useContext(DispatchState);
     let state = useContext(FormPayload);
 
-    return <label >{props.label}<input defaultValue={props.value} onChange={e=>{dispatch(formAction("number",props.thisfield,`${e.currentTarget.value}`))}}  className={props.classes} type="number" range={props.range || 10} /></label>
+    return <label >{props.label} <br/><input defaultValue={props.value} onChange={e=>{dispatch(formAction("number",props.thisfield,`${e.currentTarget.value}`))}}  className={props.classes} type="number" range={props.range || 10} /></label>
 }
