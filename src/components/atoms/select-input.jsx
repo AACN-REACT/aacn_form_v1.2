@@ -25,7 +25,7 @@ function getFilterKey(parent,state){
     return state[parent][1]
 }
 
-
+state.refs=7
 if(props.parent) {filter_key = getFilterKey(props.parent,state); 
                                 console.log("NNNN key", filter_key,props.options.filter(el=>el.Parentkey === filter_key))
                                 options_list = props.options.filter(el=>el.Parentkey === filter_key)}

@@ -19,7 +19,9 @@ function QuickComponent(props){
 const New = FormWrapper(AACNFORM,myConfig2)
 
 
+
 function App({config}){
+
 
    return (
        <>

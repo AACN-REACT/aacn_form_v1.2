@@ -12,7 +12,10 @@ import sanitizeConfig from '../../utils/sanitize-config';
 
 
 
+function getCustomerKey(){
 
+    return "ad790f32-f501-4838-8e4a-c1b057c44f30"
+}
 
 
 
@@ -30,12 +33,20 @@ if(localStorage.getItem("customer")){
 
 let sanitized = sanitizeConfig(newconfig)
 
-
+function initialGET (){
+    let mykey = getCustomerKey();
+    console.log("LINK KEY",mykey)
+    let myURL = `http://nfdev:9023/api/customers/${mykey}/addresses/new`
+    fetch(myURL,{headers:{"username":mykey, "isTypescriptClient":"false"}}).
+    then(res=>res.json()).
+    then(res=>{console.log("LINKS:",JSON.stringify(res.links,0,1))}).
+    catch(err=>{console.log("LINK ERROR",err)})
+}
 
 console.log("SAN",sanitized)
 
 
-
+initialGET()
 
 
 //we dont want this function being run on every render so we will use a usEffect Hook that we can run just the once by passingin an empty array 
