@@ -12,9 +12,13 @@ import sanitizeConfig from '../../utils/sanitize-config';
 
 
 
-function getCustomerKey(){
+function getCustomerKey(filterprop='CID='){
 
-    return "ad790f32-f501-4838-8e4a-c1b057c44f30"
+
+    let url = window.location.href;
+    let re= new RegExp(`(${filterprop})([\w|-]+)`,'g')
+    console.log(re.exec(url))
+    return re.exec(url)
 }
 
 
