@@ -9,17 +9,11 @@ import {WrapperPayload} from '../../utils/contexts/form-contexts';
 import generateMarkup from '../../utils/generate-markup'
 import generateInitialState from '../../utils/generate-initial-state';
 import sanitizeConfig from '../../utils/sanitize-config';
+import getCustomerKey from '../../utils/get-customer-key';
 
 
 
-function getCustomerKey(filterprop='CID='){
 
-
-    let url = window.location.href;
-    let re= new RegExp(`(${filterprop})([\w|-]+)`,'g')
-    console.log(re.exec(url))
-    return re.exec(url)
-}
 
 
 

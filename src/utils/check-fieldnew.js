@@ -1,4 +1,6 @@
-    
+    // this function checks if the the field in question has a parent and then finds the filter key of the parent 
+
+
      function findFilter(fields, field) {
       let filterKey=null;
         if (field.options){
@@ -24,15 +26,7 @@
        
         console.log("YESS FINAL", field['thisfield'], filterKey)
   return( 
-              markup?[{[field.thisfield]:field}]:
-              field.options!==undefined?
-              {[field.thisfield]: [ filterKey!==null?
-                                          field.options.filter(el=>el.Parentkey===filterKey).filter(el=>el.selected? el.selected:el)[0].name: 
-                                          field.options.filter(el=>el.selected)[0].name,
-                                    filterKey?
-                                          field.options.filter(el=>el.Parentkey===filterKey).filter(el=>el.selected?el.selected:el)[0].key: 
-                                          field.options.filter(el=>el.selected)[0].key]}:
-              {[field.thisfield]:field["value"] })
+              "hello" ) 
               
   
           
