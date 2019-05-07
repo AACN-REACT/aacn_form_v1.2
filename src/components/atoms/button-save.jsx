@@ -10,5 +10,5 @@ export default function ButtonSave(props){
     let dispatch = useContext(DispatchState)
     let styles=Object.assign({},[props.styles],{margin:"5px"})
     return <button className={props.classes || "btn btn-primary"} onClick={e=>{e.preventDefault();
-        props.saveFunction()}} style={styles} >SAVE</button>
+        props.saveFunction()}} style={props.styles} >SAVE</button>
 }
