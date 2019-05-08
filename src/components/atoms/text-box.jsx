@@ -14,5 +14,5 @@ export default function TextBox(props){
     console.log("WIDTH:", width, "\n", "HEIGHT:", height)
     
 
-    return <label >{props.label}<br/><textarea   cols={width}  rows={height} onChange={e=>{dispatch(formAction("textbox",props.thisfield,`${e.currentTarget.value}`))}} width={500} /></label>
+    return <label >{props.label}<br/><textarea className={props.classes || "btn btn-primary"} cols={width}  rows={height} onChange={e=>{dispatch(formAction("textbox",props.thisfield,`${e.currentTarget.value}`))}} width={500} /></label>
 }

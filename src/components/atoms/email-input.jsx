@@ -7,5 +7,5 @@ import {DispatchState,FormPayload} from '../../utils/contexts/form-contexts';
 export default function EmailInput(props) {
 
 
-    return (<label >{props.label} <input  type="email" /></label>)
+    return (<label >{props.label} <input className={props.classes || "testcss"} type="email" /></label>)
 }

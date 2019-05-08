@@ -16,7 +16,7 @@ function filterOptions( formstate, options, parent){
      console.log("THIS RADIO SHOULD NOT HAVE A PARENT")
      console.log("RADIO PARENT", parent, formstate)
     let thiskey = formstate[parent][1]
- return options.filter(el=>el.Parentkey===thiskey).map((el,i)=><><label key={i}> <input type="radio" name={props.thisfield} value={[el.name, el.key]} />{el.name}</label><br/></>);
+ return options.filter(el=>el.Parentkey===thiskey).map((el,i)=><><label key={i}> <input  type="radio" name={props.thisfield} value={[el.name, el.key]} />{el.name}</label><br/></>);
  }
  else {
 
