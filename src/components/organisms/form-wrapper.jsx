@@ -21,7 +21,10 @@ export default function FormWrapper(Element, config, saveFunction){
 
 
 
-let newconfig={...config}
+const [payload,setPayload] = useState({})
+
+   
+let newconfig={...config,saveFunction:saveFunction,payload:payload}
 //check if customer is logged in 
 if(localStorage.getItem("customer")){
 
@@ -31,18 +34,16 @@ if(localStorage.getItem("customer")){
 
 let sanitized = sanitizeConfig(newconfig)
 
+//this initialGet function , getCustomerKey will check if there is a cuntomer key in the url
 function initialGET (){
     let mykey = getCustomerKey();
     console.log("LINK KEY",mykey)
     let myURL = `http://nfdev:9023/api/customers/${mykey}/addresses/new`
     fetch(myURL,{headers:{"username":mykey, "isTypescriptClient":"false"}}).
     then(res=>res.json()).
-    then(res=>{console.log("LINKS:",JSON.stringify(res.links,0,1))}).
+    then(res=>{}).
     catch(err=>{console.log("LINK ERROR",err)})
 }
-
-console.log("SAN",sanitized)
-
 
 initialGET()
 

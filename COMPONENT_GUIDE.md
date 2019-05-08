@@ -30,6 +30,11 @@ The utility library is  a collection of utility functions, each file should cont
 
  Components will be functions and where state is needed to be persisted we shall use the useReducer and useContext hook to pass down state through the component tree.
 
+**FORM-WRAPPER**
+  The form-wrapper is a higher-order component that will eventually be extracted to stand alone. It adds important functionality to the AACNFORM component by\
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i)  sanitizing the config\
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii) supplying the top level apis for submission\
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii) anyother configuration we'd like to pass in
 
 **AACNFORM**
   We will have a AACNFORM component which will take a config object and generate our form. As long as the correct fields are defined in the config object
@@ -37,4 +42,4 @@ The utility library is  a collection of utility functions, each file should cont
 
   **ElementContainer**
 
-  This is the compound component that holds the individual field components. This is called by AACNFORM where a function will loop
+  This is the compound component that holds the individual field components. This is called by AACNFORM where a function will loop through the 

@@ -2,6 +2,9 @@
 import isJSON from "./is-JSON";
 import checkGaps  from "./check-gaps.js"
 
+
+
+
 export default function sanitizeConfig(input) {
   let returnedConfig = {},
     formType = [];
