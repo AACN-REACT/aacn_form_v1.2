@@ -12,7 +12,7 @@ const myConfig = {
                   "patch":"https://testendpoint.free.beeceptor.com"},
     "type": "",
     "globalFormClasses":[],
-    "globalFormStyles":{},
+    "globalFormStyles":{ "box-shadow": "3px 3px 15px gray", padding: "30px"},
     "fields": field1
 }
 

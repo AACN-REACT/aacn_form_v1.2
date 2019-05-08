@@ -37,7 +37,7 @@ else {
 let markup = options_list.map(el=><option>{el.name}</option>)
 return (
           <div>
-                    <select defaultValue={state[props.thisfield][0]} onChange={e=>{dispatch({type:"select", payload:{[props.thisfield]:[e.currentTarget.value, options_list.filter(el=>el.name===e.currentTarget.value)[0].key] }} )}}>
+                    <select className={props.classes } defaultValue={state[props.thisfield][0]} onChange={e=>{dispatch({type:"select", payload:{[props.thisfield]:[e.currentTarget.value, options_list.filter(el=>el.name===e.currentTarget.value)[0].key] }} )}}>
                         {markup}
                     </select>
 

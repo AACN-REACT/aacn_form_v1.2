@@ -48,10 +48,10 @@ console.log("NEW FORM STATE:", formState)
        <DispatchState.Provider value={dispatchState} > 
        <Allfields.Provider value={allfields} > 
     
-        <form >   
+        <form className={config.globalFormClasses} style={config.globalFormStyles} >   
         {generateMarkup(config)}
-        <JSONCOMP />
         </form > 
+        <JSONCOMP />
         </Allfields.Provider>
        </DispatchState.Provider >
        </FormPayload.Provider >    

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useContext, Component } from 'react';
+import {Button} from 'react-bootstrap'
 
 import { FormPayload } from '../../utils/contexts/form-contexts';
 import { DispatchState} from '../../utils/contexts/form-contexts';
@@ -12,6 +13,7 @@ export default function ButtonReset(props){
     let dispatch = useContext(DispatchState)
 
     let styles=Object.assign({},[props.styles],{margin:"5px"})
-    return <button className={props.classes || "btn btn-primary"} style={props.styles} 
-    onClick={e=>{e.preventDefault();dispatch({type:"reset"})}} >RESET</button>
+    return (<Button className={props.classes || ""} style={props.styles} 
+    onClick={e=>{e.preventDefault();dispatch({type:"reset"})}} >RESET</Button>
+)
 }
