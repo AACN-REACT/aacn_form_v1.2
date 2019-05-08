@@ -2,6 +2,7 @@
 import React,{useState, useContext} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './aacnstyles.css'
 
 import AACNFORM from './components/organisms/aacnform';
 import FormWrapper from './components/organisms/form-wrapper';
@@ -25,12 +26,12 @@ function App({config}){
 
    return (
        <>
-       <h1>WRAPPED FORM</h1>
+       {/* <h1>WRAPPED FORM</h1>
        {New}
        <br/>
        <br/>
        <br/>
-       <h1>NO WRAP</h1>
+       <h1>NO WRAP</h1> */}
        <AACNFORM config={config} />
        </>
    )
