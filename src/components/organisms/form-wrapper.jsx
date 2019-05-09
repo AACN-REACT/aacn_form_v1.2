@@ -21,10 +21,9 @@ export default function FormWrapper(Element, config, saveFunction){
 
 
 
-const [payload,setPayload] = useState({})
 
    
-let newconfig={...config,saveFunction:saveFunction,payload:payload}
+let newconfig={...config,saveFunction:saveFunction}
 //check if customer is logged in 
 if(localStorage.getItem("customer")){
 

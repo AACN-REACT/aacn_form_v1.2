@@ -25,9 +25,29 @@ function getFilterKey(parent,state){
     return state[parent][1]
 }
 
-let syntEvent = new Event('change')
+//find out if there are any children
+function propagate(state,dispatch,value){
 
-state.refs=7
+   let children =  allfields.filter(field=>field.parent===props.thisfield)
+    console.log("LLL children", props.thisfield, children)
+//now for each of the children , find the options that match the 
+
+
+children.forEach(el=> {
+console.log("LLL state",state[el.thisfield])
+let myfilter = state[props.thisfield][1]
+let parent = el.parent;
+let options = el.options;
+let answer  =  [options].filter( el=> { console.log("LLL options >>>>>>",el);return el.Parentkey===myfilter } )[0]
+console.log("LLL parentkey answer", answer)
+console.log("LLL options", options, myfilter)
+dispatch({type:"select", 
+            payload: {  [state[el.thisfield]] : answer     }
+
+} )
+})
+}
+propagate(state,dispatch)
 if(props.parent) {filter_key = getFilterKey(props.parent,state); 
                                 console.log("NNNN key", filter_key,props.options.filter(el=>el.Parentkey === filter_key))
                                 options_list = props.options.filter(el=>el.Parentkey === filter_key)}
@@ -39,7 +59,14 @@ else {
 let markup = options_list.map(el=><option>{el.name}</option>)
 return (
           <div>
-                    <select  className={props.classes } defaultValue={state[props.thisfield][0]} onChange={e=>{dispatch({type:"select", payload:{[props.thisfield]:[e.currentTarget.value, options_list.filter(el=>el.name===e.currentTarget.value)[0].key] }} )}}>
+                    <select  className={props.classes } defaultValue={state[props.thisfield][0]} onChange={e=>{
+                        dispatch(  
+                              {type:"select", payload:{[props.thisfield]:[e.currentTarget.value, options_list.filter(el=>el.name===e.currentTarget.value)[0].key] }}
+                               )
+                        
+                        
+                        
+                        }}>
                         {markup}
                     </select>
 

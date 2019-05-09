@@ -6,7 +6,7 @@
         if (field.options){
           if(field.parent){
             filterKey = fields.filter(el=>el['thisfield']===field.parent)[0].options.filter(el=>el.selected)[0].key
-            console.log("OOOO \n","\n  ------this field \n",field.thisfield, "\n  ------fields parent: \n ", field.parent, " \n ------filter key: \n", filterKey)
+
           }
         }
         
