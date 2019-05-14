@@ -1,0 +1,450 @@
+//UI toolkit basic styling
+
+
+///-----breakpoints-----///
+//*note xs-below is the default!
+//xs break point is reserved *only* for adjustments to very small mobile phones like iPhone 5//
+//please use sm breakpoint as the average break for mobile//
+//use md as breakpoint for tablets - lg for desktop - xl for jumbotron//
+
+$xs:"xs";
+$sm:"sm";
+$md:"md";
+$lg:"lg";
+$xl:"xl";
+$breakpoints: ( $xs:330px, $sm: 576px, $md: 768px, $lg: 992px, $xl: 1200px, ) !default;
+
+@mixin responsive($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Value not found from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+/////---------------global--------------/////
+body {
+    font-family: $font-source;
+    font-weight: 400;
+    font-size: .9375rem;
+    line-height: 1.26667;
+   // background:purple;
+
+    @include responsive($xs) {
+      // background: yellow;
+    }
+
+    @include responsive($sm) {
+        font-size: 1.125rem;
+        line-height: 1.33333;
+       // background: orange;
+    }
+
+    @include responsive($md) {
+      //  background: red;
+    }
+
+    @include responsive($lg) {
+      //  background: green;
+    }
+
+    @include responsive($xl) {
+      //  background: blue;
+    }
+}
+
+
+
+
+
+    ////modules////
+    .kit {
+        background-color: #ecebeb;
+        padding: 10px 15px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+        .customer-address {
+
+            max-width:90%;
+
+            @include responsive($sm) {
+                max-width: 663px;
+            }
+
+            margin-left: 10px;
+        }
+
+
+    ///sooper cool global theme generator//////////////////
+@mixin theme($name, $theme-light, $theme-dark) {
+    .#{$name} {
+        .theme {
+            //base container
+            .container {
+                margin-right: auto;
+                margin-left: auto;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-family: $font-source;
+            }
+            // Titles/////////////////
+            .large-title {
+                font-family: $font-freight;
+                font-weight: 700;
+                font-size: 1.125rem;
+                line-height: 1.11111;
+                color: $theme-light;
+
+                @include responsive($sm) {
+                    font-size: 1.375rem;
+                    line-height: 1.09091;
+                }
+
+
+                @include responsive($md) {
+                    font-size: 1.5rem;
+                    line-height: 1.08333;
+                }
+            }
+
+            .border-box {
+                border: solid 5px $theme-dark;
+                background-color: $theme-light;
+                padding: 15px;
+                width: 40%;
+            }
+
+            textarea {
+                background-color: $white;
+                border: thin solid $cloudy-gray;
+                width: 100%;
+                min-height: 200px;
+            }
+            //dropdown menu
+            .dropdown {
+                display: inline;
+                position: relative;
+                margin-bottom: 25px;
+
+
+
+                button {
+                    background-color: $white;
+                    box-shadow: 0 -2px 0 0 $theme-dark inset;
+                    color: $theme-light;
+                    border: none;
+
+
+                    &:hover,
+                    &:active {
+                        color: $theme-light;
+                        background-color: $white;
+                        border-color: $theme-dark;
+                    }
+
+                    &:after {
+                        margin-left: 8px;
+                    }
+                }
+                /////////select with generic children using for simpler demo purposes ///////////////
+                select {
+                    background-color: $white;
+                    border-radius: 3px;
+                    border-top: thin solid $cloudy-gray;
+                    border-left: thin solid $cloudy-gray;
+                    border-right: thin solid $cloudy-gray;
+                    border: 1px solid #ced4da;
+                    padding: 6px;
+                    overflow: auto;
+                    max-height: 250px;
+                    width: 100%;
+                    border-bottom: 2px solid $theme-light;
+                    margin-top: 20px;
+
+                    &:after {
+                        display: inline-block;
+                        width: 0;
+                        height: 0;
+                        margin-left: 0.255em;
+                        vertical-align: 0.255em;
+                        //content: "";
+                        border-top: 0.3em solid $merlin-gray;
+                        border-right: 0.3em solid transparent;
+                        border-bottom: 0;
+                        border-left: 0.3em solid transparent;
+                    }
+                }
+
+
+                .dropdown-menu {
+                    background-color: $white;
+                    border-radius: 3px;
+                    border-top: thin solid $cloudy-gray;
+                    border-left: thin solid $cloudy-gray;
+                    border-right: thin solid $cloudy-gray;
+                    padding: 5px 20px 0px 20px;
+                    overflow: auto;
+                    max-height: 250px;
+                    z-index: 2000;
+                    position: absolute;
+                    top: -42px;
+                    left: -1px;
+                    border-bottom: 2px solid $theme-light;
+
+                    a {
+                        display: block;
+                        background: $white;
+                        border-bottom: solid thin $timberwolf-gray;
+                        color: $merlin-gray;
+                        padding: 17px 1px;
+                        font-size: 1.15rem;
+                        min-width: 175px;
+                        line-height: 1.15rem;
+                        height: 55px;
+
+                        &:hover {
+                            font-weight: 700;
+                            font-size: 1.125rem;
+                            line-height: 1.15rem;
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+            //ovewrights assignment of auto-success to dropdown
+            .btn-success:not(:disabled):not(.disabled).active,
+            .btn-success:not(:disabled):not(.disabled):active,
+            .show > .btn-success.dropdown-toggle {
+                color: rgb(255, 255, 255);
+                background-color: $theme-light;
+                border-color: $theme-light;
+                border: $theme-dark;
+            }
+
+            .btn-success:not(:disabled):not(.disabled):active:focus,
+            .show .btn-success.dropdown-toggle:focus,
+            .btn-success:focus {
+                box-shadow: none;
+            }
+            //primary secondary buttons
+            .btn {
+                margin-bottom: 20px;
+                font-family: "Source Sans Pro", sans-serif;
+                font-weight: 700;
+                border-radius: 2px;
+                cursor: pointer;
+                position: relative;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                z-index: 1;
+                text-decoration: none;
+                font-size: 1rem;
+                padding: 11px;
+                width: 90%;
+                padding: 7px 18px 9px;
+                margin: 0 auto;
+
+            
+
+                @include responsive($sm) {
+                    width: auto;
+                    min-width: 150px;
+                    margin-left:15px;
+                }
+
+                &.btn-primary {
+                    background-color: $theme-light;
+                    box-shadow: 0 -2px 0 0 $theme-dark inset;
+                    color: $white;
+                    border: none;
+
+                    &:disabled,
+                    &:disabled:hover {
+                        background-color: $cloudy-gray;
+                        cursor: default;
+                        box-shadow: 0 -2px 0 0 inset $merlin-gray;
+                    }
+
+                    &.link-only {
+                        background: $white;
+                        background-color: $white;
+                        border: none;
+                        text-decoration: underline;
+                        color: $merlin-gray;
+                        box-shadow: none;
+
+                        &:hover, &:active, &:focus, &:not(:disabled), &:not(.disabled) {
+                            color: $timberwolf-gray;
+                            background: $white;
+                            background-color: $white;
+                            border: none;
+                            box-shadow: none;
+                        }
+                    }
+
+                    &.reversed {
+                        background-color: $white;
+                        box-shadow: 0 -2px 0 0 $theme-dark inset;
+                        color: $theme-light;
+                        border: none;
+
+                        &:hover, &:active, &:focus {
+                            color: $white;
+                        }
+                    }
+                }
+
+                &.btn-secondary {
+                    &:disabled,
+                    &:disabled:hover {
+                        background-color: $cloudy-gray;
+                        cursor: default;
+                    }
+                }
+
+                &.btn-secondary-outline {
+                    border-radius: 3px;
+                    border: 2px solid $theme-light;
+                    color: $theme-light;
+                    padding: 8px 18px;
+                    background: $white;
+
+                    &:hover {
+                        color: $white;
+                        background-color: $theme-light;
+                    }
+
+                    &.arrow {
+                        padding-right: 15px;
+
+                        &:after {
+                            content: ">";
+                            padding-left: 10px;
+                        }
+                    }
+                }
+
+                &.btn-primary:hover,
+                &.btn-primary:focus,
+                &.btn-primary:not(:disabled):not(.disabled):active,
+                &.btn-secondary:hover,
+                &.btn-secondary:focus,
+                &.btn-secondary:not(:disabled):not(.disabled):active {
+                    background-color: $theme-dark;
+                }
+            }
+
+            label {
+                font-weight: bold;
+                color: $theme-light;
+            }
+            //form ///////////////////
+            form {
+                width: 90%;
+                margin: 0 auto;
+                background-color: $white;
+                border-radius: 3px;
+                padding: 10px;
+                margin-bottom: 35px;
+
+
+
+                .custom-checkbox, .custom-radio {
+                    cursor: pointer;
+                }
+
+                .custom-checkbox label {
+                    font-size: 1rem;
+                    padding-left: 10px;
+                    padding-top: 5px;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                }
+
+                .custom-radio label {
+                    font-size: 1rem;
+                    padding-left: 12px;
+                    padding-top: 7px;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                }
+                //custom checkbox
+                .custom-checkbox.custom-control input.custom-control-input ~ .custom-control-label::before {
+                    background-color: $white;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 3px;
+                    border: thin $cloudy-gray solid;
+                }
+
+
+
+                .custom-checkbox.custom-control input.custom-control-input:checked ~ .custom-control-label::after {
+                    color: $merlin-gray;
+                    background-image: none;
+                    content: "";
+                    display: block;
+                    margin-left: 8px;
+                    width: 9px;
+                    height: 18px;
+                    border: thin solid $black;
+                    border-width: 0 3px 3px 0;
+                    transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                }
+                //custom radio
+                .custom-radio.custom-control input.custom-control-input ~ .custom-control-label::before {
+                    cursor: pointer;
+                    border-radius: 50%;
+                    background-color: $white;
+                    width: 1.9rem;
+                    height: 1.9rem;
+                    border: thin solid $timberwolf-gray;
+                }
+
+
+                .custom-radio.custom-control input.custom-control-input:checked ~ .custom-control-label::after {
+                    width: 1rem;
+                    height: 1rem;
+                    background-color: $theme-light;
+                    margin: 0;
+                    background-image: none;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    top: 0.7rem;
+                    left: .45rem;
+                }
+            }
+        }
+    }
+}
+
+////////add/delete as needed to generate common themes////////
+///////use NAME arg in vertical prop for React components to match or switch/////
+
+    @include theme (default, $scooter-blue, $eastern-blue );
+
+    @include theme (events, $neon-carrot-orange, $cinnamon-orange );
+
+    @include theme (excellence, $medium-purple, $royal-purple );
+
+    @include theme (education, $dodger-blue, $denim-blue );
+
+    @include theme (certification, $caribbean-green, $observatory-green );
+
+    //@include theme (sharon, $sunset-orange, $mint-tulip );
+ 
+   

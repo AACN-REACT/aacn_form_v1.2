@@ -1,0 +1,198 @@
+﻿// ---------------------------------------- //
+// PATHS CONFIG
+// ---------------------------------------- //
+
+$app-root: "/" !default;
+$static-root: $app-root + 'src';
+$img-root: $static-root + '/img';
+$font-root: $static-root + '/fonts';
+$font-aacn-icons-root: $font-root + '/aacn-icons-new';
+$font-freight-root: $font-root + '/freight/';
+$font-meta-root: $font-root + '/meta-serif/';
+//$font-source-root: $font-root + '/source-sans/';
+//$font-bootstrap-icons-root: $font-root + '/bootstrap/';
+
+// ---------------------------------------- //
+// COLORS
+// ---------------------------------------- //
+
+$white: #fff;
+$black: #000;
+$form-gray: #fbfaf9;
+$light-gray: #e4e4e3;
+$remove: #BD0505;
+$okay_green: #228B22;
+$alert_red: #F51903;
+$scooter-blue: #36c4d6;
+$eastern-blue: #1e97a6;
+$medium-purple: #9f66e6;
+$royal-purple: #6b39aa;
+$dodger-blue: #2b92f7;
+$denim-blue: #186cbf;
+$shadow-blue: #074b8e;
+$caribbean-green: #0dca92;
+$observatory-green: #04835d;
+$neon-carrot-orange: #fd9741;
+$caution-yellow: #fcf9e1;
+$alert-yellow: #fbcc48;
+$cinnamon-orange: #c76a1b;
+$cararra-white: #f1efed;
+$timberwolf-gray: #d4d1cd;
+$cloudy-gray: #afaca8;
+$merlin-gray: #47433f;
+$sunset-orange: #fc4d3c;
+$red-orange: #fb3627;
+$natural-gray: #948f88;
+$mint-tulip: #cff5ea;
+$light-gray: #d8d7d6;
+
+
+$default-block-color: $scooter-blue;
+$default-block-color-dark: $eastern-blue;
+
+$color-pairs: ( $scooter-blue: ($scooter-blue, $eastern-blue), $medium-purple: ($medium-purple, $royal-purple), $dodger-blue: ($dodger-blue, $denim-blue), $caribbean-green: ($caribbean-green, $observatory-green), $neon-carrot-orange: ($neon-carrot-orange, $cinnamon-orange) );
+
+$facebook-blue: #3b5998;
+$twitter-blue: #4099ff;
+$linkedin-blue: #1d87be;
+$youtube-red: #e52d27;
+$instagram-brown: #6A453B;
+
+@function get-color-pairs($color) {
+    @return map-get($color-pairs, $color);
+}
+
+@function get-dark-color-for-primary-color($color) {
+    @return nth(map-get($color-pairs, $color), 2);
+}
+
+
+// ---------------------------------------- //
+// BADGE SPECIFIC COLORS
+// ---------------------------------------- //
+$flame-of-excellence: #fcb409;
+$pioneering-spirit: #fe6f3d;
+$distinguished-research: #02cd58;
+$circle-of-excellence: #158cfb;
+$mrka: #fd6666;
+$csi-academy: #beffa2;
+$nti-attendee: #ff9f51;
+$volunteer-board-member: #fe4b4b;
+$volunteer: #7390fe;
+$volunteer-ambassador: #93fb6e;
+$chapter-advisor: #ffd395;
+$first-year-member: #2dffdf;
+$one-yr-badge: #5de2ff;
+$ten-yr-badge: #fae273;
+$twenty-yr-badge: #ca59ff;
+$thirty-yr-badge: #ff6eb2;
+$chapter-officer: #95ffc2;
+$chapter-member: #9f66e6;
+$forty-yr-badge: #02cd58;
+
+
+// ---------------------------------------- //
+// FONTS CONFIG
+// ---------------------------------------- //
+//
+
+//font @font-face
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+
+
+@font-face {
+    font-family: "freight-sans-pro";
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    src: url($font-freight-root + "freigsanpromed-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "freight-sans-pro";
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    src: url($font-freight-root + "freigsanprosem-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "freight-sans-pro";
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: url($font-freight-root + "freigsanprobol-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ff-meta-serif-web-pro";
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    // for Typekit FF Meta Serif Book
+    src: url($font-meta-root + "MetaSerifWebPro-Book.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ff-meta-serif-web-pro";
+    font-weight: 500;
+    font-style: italic;
+    font-stretch: normal;
+    // for Typekit FF Meta Serif Book Italic
+    src: url($font-meta-root + "MetaSerifWebPro-BookItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ff-meta-serif-web-pro";
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    // for Typekit FF Meta Serif Bold
+    src: url($font-meta-root + "MetaSerifWebPro-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ff-meta-serif-web-pro";
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    // for Typekit FF Meta Serif Bold
+    src: url($font-meta-root + "MetaSerifWebPro-BoldItalic.woff") format("woff");
+}
+
+
+// raw font-family names
+$font-family-freight-sans-pro: 'freight-sans-pro';
+$font-family-source-sans-pro: 'Source Sans Pro';
+$font-family-meta-serif-pro: 'ff-meta-serif-web-pro';
+$font-family-aacn-icons: 'aacn-icons';
+$font-aacn-icon-prefix: 'aacn-icon-';
+
+// font-family aliases (should include fallbacks)
+
+$font-aacn-icons: $font-family-aacn-icons;
+$font-freight: $font-family-freight-sans-pro, sans-serif;
+$font-source: $font-family-source-sans-pro, sans-serif;
+$font-meta: $font-family-meta-serif-pro, serif;
+:root {
+    --font-family-sans-serif: $font-source;
+}
+
+
+// ---------------------------------------- //
+// BS SCAFFOLDING CONFIG
+// ---------------------------------------- //
+
+$headings-font-family: inherit;
+$headings-font-weight: 500;
+$headings-line-height: 1.1;
+$headings-color: inherit;
+$font-size-base: 18px;
+$font-family-sans-serif: sans-serif;
+$font-family-serif: serif;
+$font-family-monospace: monospace;
+$font-family-base: $font-family-sans-serif;
+
+
