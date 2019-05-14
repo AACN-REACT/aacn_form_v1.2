@@ -1,7 +1,7 @@
 import {rooms,flowers,countries,states,fruits,bands}  from './myoptions.js'
 
-let importedCOuntries
-fetch("http://nfdev:9023/api/countries/types").then(res=>res.json()).then(res=>)
+// let importedCOuntries
+// fetch("http://nfdev:9023/api/countries/types").then(res=>res.json()).then(res=>)
 const renewform = [
 
     {thisfield:"yourinfo", type:"heading", value: "Your Information",classes:[],styles:{}},

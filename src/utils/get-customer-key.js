@@ -7,6 +7,13 @@
 export default function getCustomerKey(){
         let url = window.location.href;
         let re= /(CID=)((\w+|\-)+)+/gi;
-        let ans =  re.exec(url)!==null? re.exec(url)[2]:"ad790f32-f501-4838-8e4a-c1b057c44f30"
+        let ans =  re.exec(url)!==null? re.exec(url)[2]:null
+        if (!ans){
+                ans = localStorage.getItem('CID')?localStorage.getItem('CID'):null
+        }
+        if(!ans){
+                ans = re.exec(document.cookie)[2]
+        }
+        
         return ans
 }

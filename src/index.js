@@ -7,6 +7,7 @@ import './master.css';
 
 import AACNFORM from './components/organisms/aacnform';
 import FormWrapper from './components/organisms/form-wrapper';
+import Wrapper2 from './components/organisms/form-wrapper2';
 import {myConfig, myConfig2} from './data/myconfig';
 import promisePolyFill from './utils/promise-pollyfill'
 //this is where we will compile our form , it will form the starting point for our component to be inserted
@@ -18,7 +19,7 @@ function QuickComponent(props){
 
     return <div><h1>{props.name}</h1></div>
 }
-const New = FormWrapper(AACNFORM,myConfig2)
+const New = Wrapper2(AACNFORM,["address","https://endpoint.com"])
 
 
 
@@ -27,13 +28,13 @@ function App({config}){
 
    return (
        <>
-       {/* <h1>WRAPPED FORM</h1>
+       <h1>WRAPPED FORM</h1>
        {New}
        <br/>
        <br/>
        <br/>
-       <h1>NO WRAP</h1> */}
-       <AACNFORM config={config} />
+       <h1>NO WRAP</h1> 
+       {/* <AACNFORM config={config} /> */}
        </>
    )
 }

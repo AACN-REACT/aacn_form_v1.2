@@ -44,7 +44,7 @@ let sanitized = sanitizeConfig(newconfig)
 
 //this initialGet function , getCustomerKey will check if there is a cuntomer key in the url
 function initialGET (){
-    let mykey = getCustomerKey();
+    let mykey = getCustomerKey()
     console.log("LINK KEY",mykey)
     let myURL = `http://nfdev:9023/api/customers/${mykey}/addresses/new`
     fetch(myURL,{headers:{"username":mykey, "isTypescriptClient":"false"}}).

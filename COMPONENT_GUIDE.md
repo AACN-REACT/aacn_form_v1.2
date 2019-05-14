@@ -43,3 +43,22 @@ The utility library is  a collection of utility functions, each file should cont
   **ElementContainer**
 
   This is the compound component that holds the individual field components. This is called by AACNFORM where a function will loop through the 
+
+
+  ....
+
+
+  **WrapperFunction**
+
+  The 'wrapper' function or HOC(higher order component) is a function that takes a react component as one of its parameters and 
+  will add some values and functionality to it. It is designed to be general purpose but will mostly be used with the AACNFORM component
+
+  Other parameters include configuration files and endpoints. 
+
+  The first action it will perform is to check for a customerID, sometimes customerID is to be found in the url in dynamically generated pages
+  So we employ a getCustomerKey function, this function will also look at other places for the cumstomerID it will eventually use tokens.
+
+  Once we have a customerID or we know that this is a new customer we can then progress.
+
+  We check the configuration file to see what type of form is being displayed, if it is one of the default types we can then fetch the correct data
+  for the user
