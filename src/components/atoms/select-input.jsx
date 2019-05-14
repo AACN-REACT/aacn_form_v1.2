@@ -47,7 +47,7 @@ dispatch({type:"select",
 } )
 })
 }
-propagate(state,dispatch)
+//propagate(state,dispatch)
 if(props.parent) {filter_key = getFilterKey(props.parent,state); 
                                 console.log("NNNN key", filter_key,props.options.filter(el=>el.Parentkey === filter_key))
                                 options_list = props.options.filter(el=>el.Parentkey === filter_key)}
@@ -58,17 +58,18 @@ else {
 
 let markup = options_list.map(el=><option>{el.name}</option>)
 return (
-          <div>
+          <div>     <label>{props.label}
                     <select  className={props.classes } defaultValue={state[props.thisfield][0]} onChange={e=>{
                         dispatch(  
-                              {type:"select", payload:{[props.thisfield]:[e.currentTarget.value, options_list.filter(el=>el.name===e.currentTarget.value)[0].key] }}
-                               )
-                        
-                        
-                        
+                            {type:"select", payload:{[props.thisfield]:[e.currentTarget.value, options_list.filter(el=>el.name===e.currentTarget.value)[0].key] }}
+                            )
+                            
+                            
+                            
                         }}>
                         {markup}
                     </select>
+                        </label>
 
           </div>
 )

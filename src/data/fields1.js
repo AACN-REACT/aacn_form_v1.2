@@ -35,7 +35,7 @@ const field1 = [
                 {thisfield:"country", type:"select", idkey:"111",  options:countries , classes:[],styles:{},label:"Country", id:"", value:null, validation:""},
                 {thisfield:"state", parent:"country" , idkey:"222", type:"select",  options:states,  classes:[],styles:{},label:"States", id:"", value:null, validation:""},
                 {thisfield:"bands", parent:"state" , idkey:"333", type:"select",  options:bands,  classes:[],styles:{},label:"Bands", id:"", value:null, validation:""},
-                {thisfield:"name", parent:"country",  idkey:"444", type:"radio", options:rooms, classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
+                //{thisfield:"name", parent:"country",  idkey:"444", type:"radio", options:rooms, classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 {thisfield:"telephone", type:"telephone", parent:"country", patterns:"", classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 
                 {thisfield:"flower", parent:"country",type:"radio", options:flowers, classes:[],styles:{},label:"Flowers", id:"", value:null, validation:""},
@@ -46,7 +46,7 @@ const field1 = [
                  contents: [
                      
                 {thisfield:"button1", type:"heading", classes:[],styles:{},label:"Save", id:"", value:"This Is the Heading", validation:""},
-                {thisfield:"button1", saveFunction: doSave, type:"save",styles:{},label:"Save", id:"", value:null, validation:""},
+                {thisfield:"button1", saveFunction: doSave, classes:["makeblue","mybutton"],type:"save",styles:{},label:"Save", id:"", value:null, validation:""},
                 {thisfield:"button2", type:"submit", classes:[],styles:{},label:"Submit", id:"", value:null, validation:""},
                 {thisfield:"button3", type:"reset",styles:{},label:"reset", id:"", value:null, validation:""}
             ]},

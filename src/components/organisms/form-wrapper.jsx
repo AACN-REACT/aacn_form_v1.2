@@ -14,7 +14,16 @@ import getCustomerKey from '../../utils/get-customer-key';
 
 
 
+function HOC(props){
 
+
+
+const Comp  = props.comp
+
+    return (
+        <Comp />
+    ) 
+}
 
 
 export default function FormWrapper(Element, config, saveFunction){
