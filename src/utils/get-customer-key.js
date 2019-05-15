@@ -14,6 +14,6 @@ export default function getCustomerKey(){
         if(!ans){
                 ans = re.exec(document.cookie)[2]
         }
-        
+       // console.log("customer key", ans)
         return ans
 }

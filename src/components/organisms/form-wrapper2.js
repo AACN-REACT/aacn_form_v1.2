@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-import getCustomerID from '../../utils/get-customer-key'
+import getCustomerKey from '../../utils/get-customer-key'
 import sanitizedConfig from '../../utils/sanitize-config'
 
 
@@ -10,10 +10,10 @@ export default function Wrapper2 (comp,config){
 
     //extract the comp
 
-    const Comp = comp
+    const compType = comp.name ; console.log("Component type", compType)
     //find customer ID , if doen't exist set to null
 
-    const customerID = getCustomerID()
+    const customerID = getCustomerKey()
 
     let customerData = {};
     let endpointCollection = []
@@ -23,8 +23,8 @@ export default function Wrapper2 (comp,config){
     function extractEndpoints(collection){
 
         const newCollection = collection.map(el=>({[el["rel"]]:el["href"]}))
-        config.endpoints = newCollection
-        console.log("CCCCCendpoints",config.endpoints)
+        config.endpoints = newCollection;
+        //console.log("CCCCCendpoints",config.endpoints)
         return newCollection
     }
 
@@ -42,8 +42,9 @@ export default function Wrapper2 (comp,config){
         if(sanitizeconfig.type==="address"){
         fetch(`http://nfdev:9023/api/customers/${customerID}/addresses/new`, {headers: {  "username": "tertert" ,"isTypescriptClient": "false"}}).
         then(res=>res.json()). 
-        then(res=>{customerData = res.result;extractEndpoints(res.links) ;return res.result}).
-        then(res=>console.log("CCCCCC",customerData,endpointCollection))
+        then(res=>{res.result?customerData = res.result:customerData = [res.errorInfo.errorCode,res.errorInfo.errorName];extractEndpoints(res.links);extractEndpoints(res.links);return res.result}).
+        then(res=>console.log("CCCCCC2",customerData,endpointCollection)).
+        catch(err=>{console.log("FAILED for this reason: \n", customerData)})
     }
 
  
