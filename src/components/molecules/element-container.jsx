@@ -9,6 +9,7 @@ import Heading from '../atoms/heading';
 import TextBox from '../atoms/text-box';
 import ButtonSave from '../atoms/button-save';
 import ButtonReset from '../atoms/button-reset';
+import CheckboxInput from '../atoms/checkbox-input.1';
 
 
 
@@ -25,6 +26,7 @@ const ElementContainer = {
     autofill: (props)=> <TextInput {...props} />,
     save: (props)=> <ButtonSave  {...props} />,
     reset: (props)=> <ButtonReset  {...props} />,
+    checkbox: (props)=><CheckboxInput {...props} />
 
 
 }

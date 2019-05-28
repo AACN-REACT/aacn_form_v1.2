@@ -12,7 +12,7 @@ export default function getCustomerKey(){
                 ans = localStorage.getItem('CID')?localStorage.getItem('CID'):null
         }
         if(!ans){
-                ans = re.exec(document.cookie)[2]
+                ans = re.exec(document.cookie)?re.exec(document.cookie)[2]:null
         }
        // console.log("customer key", ans)
         return ans

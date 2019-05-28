@@ -28,13 +28,13 @@ function App({config}){
 
    return (
        <>
-       <h1>WRAPPED FORM</h1>
+       {/* <h1>WRAPPED FORM</h1>
        {New}
        <br/>
        <br/>
        <br/>
-       <h1>NO WRAP</h1> 
-       {/* <AACNFORM config={config} /> */}
+       <h1>NO WRAP</h1>  */}
+       <AACNFORM config={config} />
        </>
    )
 }

@@ -40,10 +40,10 @@ export default function Wrapper2 (comp,config){
 
     if(customerID){
         if(sanitizeconfig.type==="address"){
-        fetch(`http://nfdev:9023/api/customers/${customerID}/addresses/new`, {headers: {  "username": "tertert" ,"isTypescriptClient": "false"}}).
+        fetch(`http://nfdev:9023/api/customers/ad790f32-f501-4838-8e4a-c1b057c44f30/addresses/new`, {headers: {  "username": "tertert" ,"isTypescriptClient": "false"}}).
         then(res=>res.json()). 
         then(res=>{res.result?customerData = res.result:customerData = [res.errorInfo.errorCode,res.errorInfo.errorName];extractEndpoints(res.links);extractEndpoints(res.links);return res.result}).
-        then(res=>console.log("CCCCCC2",customerData,endpointCollection)).
+        then(res=>console.log("Cc",customerData,endpointCollection)).
         catch(err=>{console.log("FAILED for this reason: \n", customerData)})
     }
 

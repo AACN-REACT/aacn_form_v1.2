@@ -35,10 +35,10 @@ const field1 = [
                 {thisfield:"country", type:"select", idkey:"111",  options:countries , classes:[],styles:{},label:"Country", id:"", value:null, validation:""},
                 {thisfield:"state", parent:"country" , idkey:"222", type:"select",  options:states,  classes:[],styles:{},label:"States", id:"", value:null, validation:""},
                 {thisfield:"bands", parent:"state" , idkey:"333", type:"select",  options:bands,  classes:[],styles:{},label:"Bands", id:"", value:null, validation:""},
-                //{thisfield:"name", parent:"country",  idkey:"444", type:"radio", options:rooms, classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
+                {thisfield:"name", parent:"country",  idkey:"444", type:"radio", options:rooms, classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 {thisfield:"telephone", type:"telephone", parent:"country", patterns:"", classes:[],styles:{},label:"Name", id:"", value:null, validation:""},
                 
-                {thisfield:"flower", parent:"country",type:"radio", options:flowers, classes:[],styles:{},label:"Flowers", id:"", value:null, validation:""},
+                {thisfield:"flower", parent:"country",type:"checkbox", options:flowers, classes:[],styles:{},label:"Flowers", id:"", value:null, validation:""},
                 {thisfield:"message",width:"15", rows:"10", type:"textbox", patterns:"" ,classes:[],styles:{},label:"Comments", id:"", value:null, validation:""},
                 
                 {thisfield:"buttons", type:"container", classes:[],style:{},
