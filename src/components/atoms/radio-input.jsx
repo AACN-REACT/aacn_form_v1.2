@@ -30,7 +30,7 @@ return  null
 }
 console.log("III", state)
 return <label>{props.label || props.thisfield}<div 
-onChange={e=>{
+onChange={e=>{alert("hello")
     dispatch(formAction("radio",props.thisfield, e.target.value)); } }>
     {filterOptions(state,props.options,props.parent)}
     </div>
