@@ -7,16 +7,27 @@ function doSave(){
 }
 const field2 = [
 
-    {thisfield:"name", type:"text", label:"name" ,className:"", value:"Peter", required:true},
-    {thisfield:"Details", type:"heading", value:"Address"},
-    {thisfield:"line1", type:"text",  label:"house number" ,className:"", value:"101"},
-    {thisfield:"line2", type:"text",  label:"Street" ,className:"", value:"Columbia Road"},
-    {thisfield:"postcode", type:"number",  label:"POSTCODE" ,className:"", value:"000000"},
-    {thisfield:"country", type:"select" , label:"Country" ,className:"", value:"", options:countries},
-    {thisfield:"state", type:"select" , parent:"country" ,label:"State" ,className:"", value:"", options:states},
-    {thisfield:"reset", type:"save" , label:"RESET" ,className:""},
-    {thisfield:"reset", type:"reset" , label:"RESET" ,className:""},
+    {
+        thisfield: "container1", type: "container", classes: ['col-xs-12 col-sm-10'], style: {},
+        contents: [
+            {
+                thisfield: "large-title", type: "heading", classes: ["large-title"], value: "Create an Active AACN Membership"
+            },
+            {
+                thisfield: "sub-title", type: "heading", classes: ["sub-title"], value: "Your Information"
+            },
+            {
+                thisfield: "first-name", type: "text", length: null, controlclass: "col-sm-12", styles: {}, label: "First Name",
+                placeholder: "First Name", id: "", value: null, required: "required", validation: "Field is required."
+            },
+            {
+                thisfield: "last-name", type: "text", length: null, controlclass: "col-sm-12", styles: {},
+                label: "Last Name", id: "", placeholder: "Last Name", value: null, required: "required", validation: "Field is required."
+            },
+        ]
+    },
 
+   
 
 ]
 

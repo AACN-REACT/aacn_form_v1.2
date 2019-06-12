@@ -1,6 +1,6 @@
 import checkField from './check-field.js'
 
-function writeToState ( fields,state,markup) {
+function writeToState (fields,state,markup) {
 
 
     if(markup){

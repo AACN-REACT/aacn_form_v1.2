@@ -6,7 +6,7 @@
         if (field.options){
           if(field.parent){
             filterKey = fields.filter(el=>el['thisfield']===field.parent)[0].options.filter(el=>el.selected)[0].key
-
+            console.log("OOOO \n","\n  ------this field \n",field.thisfield, "\n  ------fields parent: \n ", field.parent, " \n ------filter key: \n", filterKey)
           }
         }
         
@@ -16,13 +16,13 @@
         else { return( 
             markup?[{[field.thisfield]:field}]:
             field.options!==undefined?
-            {[field.thisfield]: [ filterKey!==null?
+            {[field.thisfield]: { value: [ filterKey?
                                         field.options.filter(el=>el.Parentkey===filterKey).filter(el=>el.selected? el.selected:el)[0].name: 
                                         field.options.filter(el=>el.selected)[0].name,
                                   filterKey?
                                         field.options.filter(el=>el.Parentkey===filterKey).filter(el=>el.selected?el.selected:el)[0].key: 
-                                        field.options.filter(el=>el.selected)[0].key]}:
-            {[field.thisfield]:field["value"] })
+                                        field.options.filter(el=>el.selected)[0].key,], touched:false }  }:
+            {[field.thisfield]:{value:field["value"], touched:false}})
             } }
           catch (e) { console.log(e) }
         

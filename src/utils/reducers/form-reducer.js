@@ -8,12 +8,14 @@ export default function formReducer (state,action){
             case "text": 
             case "number":
             case "textbox":
-            case "telephone":
+            case "tel":
             return {...state,...action.payload} 
             case "select":
             return {...state,...action.payload} 
             case "radio":
-            return {...state,...action.payload}
+            return { ...state, ...action.payload }
+            case "checkbox":
+            return { ...state, ...action.payload }
             case "reset":
             return resetForm(state)
             default:

@@ -1,7 +1,7 @@
 import React, {useConext, useReducer, useRef, Component } from 'react';
 import generateMarkup from '../../utils/generate-markup';
 import writeToState from '../../utils/write-to-state';
-import  '../../index.css';
+//import  '../../index.css';
 
 
 

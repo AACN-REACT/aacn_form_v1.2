@@ -10,11 +10,13 @@ const dispatchValue = useContext(DispatchState)
 const state = useContext(FormPayload)
 console.log("DISPASTCH VALUE",dispatchValue)
     return (
-        <label >
-            {props.label}<br/>
-
-        <input {...props} onChange = {(ev)=>dispatchValue(formAction("text",props.thisfield,ev.target.value))} value={state[props.thisfield]}  />
-        </label>
+        <div className={`form-group + ${props.controlclass}`}>
+        <input {...props} class="form-control" onBlur={ev=>dispatchValue(formAction("text", props.thisfield, ev.target.value))} onChange={(ev) => dispatchValue(formAction("text", props.thisfield, ev.target.value))} value={state[props.thisfield]["value"]} />
+            <label >
+                {props.label}
+            </label>
+            {state[props.thisfield].touched?<validation>{props.validation}</validation>:null}
+        </div>
     )
 
     

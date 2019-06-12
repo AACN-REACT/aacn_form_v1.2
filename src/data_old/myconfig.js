@@ -1,19 +1,19 @@
 import field1  from './fields1.js';
 import field2  from './fields2.js';
+import renewform  from './renew';
 
 
-///using only this one for AACN FORM STYLE DEMO
+
 const myConfig = {
-    "title": "My Styled Example Form",
+    "title": "My Example Form",
     "endpoints": {"get":"https://testendpoint.free.beeceptor.com",
                   "post":"https://testendpoint.free.beeceptor.com",
                   "put": "https://testendpoint.free.beeceptor.com",
                   "delete":"https://testendpoint.free.beeceptor.com",
                   "patch":"https://testendpoint.free.beeceptor.com"},
     "type": "",
-    "vertical": "excellence",
-    "globalFormClasses":['theme row customer-address'],
-    "globalFormStyles":{},
+    "globalFormClasses":[],
+    "globalFormStyles":{ "box-shadow": "3px 3px 15px gray", padding: "30px"},
     "fields": field1
 }
 
@@ -33,8 +33,7 @@ const myConfig2 = {
                   "delete":"https://testendpoint.free.beeceptor.com",
                   "patch":"https://testendpoint.free.beeceptor.com"},
     "type": "",
-    "vertical": "events",
-    "globalFormClasses": ['theme membership-form row'],
+    "globalFormClasses":[],
     "globalFormStyles":{},
     "fields": field2
 }

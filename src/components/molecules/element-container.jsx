@@ -9,7 +9,7 @@ import Heading from '../atoms/heading';
 import TextBox from '../atoms/text-box';
 import ButtonSave from '../atoms/button-save';
 import ButtonReset from '../atoms/button-reset';
-import CheckboxInput from '../atoms/checkbox-input.1';
+import CheckboxInput from '../atoms/check-input';
 
 
 
@@ -20,13 +20,13 @@ const ElementContainer = {
     text: (props)=><TextInput {...props} />,
     textbox: (props)=><TextBox {...props} />,
     heading:(props)=><Heading {...props} />,
-   select: (props)=> <SelectInput {...props} />,
-    radio: (props)=> <RadioInput {...props} />,
+    select: (props)=> <SelectInput {...props} />,
+    radio: (props) => <RadioInput {...props} />,
+    checkbox: (props) => <CheckboxInput {...props} />,
     telephone: (props)=> <TextInput {...props} />,
     autofill: (props)=> <TextInput {...props} />,
     save: (props)=> <ButtonSave  {...props} />,
     reset: (props)=> <ButtonReset  {...props} />,
-    checkbox: (props)=><CheckboxInput {...props} />
 
 
 }

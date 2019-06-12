@@ -4,15 +4,13 @@ import ElementContainer from '../molecules/element-container';
 import { Form } from "react-bootstrap";
 
 
-
 //import utils
 
 import generateMarkup from '../../utils/generate-markup'
 import generateInitialState from '../../utils/generate-initial-state';
 import formReducer from '../../utils/reducers/form-reducer';
 import formAction from '../../utils/actions/form-actions';
-import { DispatchState, FormPayload, Allfields, ThemeContext } from '../../utils/contexts/form-contexts';
-
+import {DispatchState,FormPayload,Allfields} from '../../utils/contexts/form-contexts';
 // const formReducer = function(state,action){
 //     return {...state,...action.payload}
 // }
@@ -27,33 +25,34 @@ function JSONCOMP (props){
    const  dispatch = useContext(DispatchState)
    const  formState = useContext(FormPayload)
     return (
-        <div>
+        <>
         <pre> {JSON.stringify(formState,null,2)} </pre>
-        </div>
+        </>
     )
 }
 
 function AACNFORM ({config}){
 
 const[formState, dispatchState] = useReducer(formReducer,generateInitialState(config))
-const [theme, setTheme]= useState("education")
+
 localStorage.setItem("customer", "Donald Duck")
 
 const allfields = config.fields;
+console.log("NNNN all fields:",allfields)
+console.log("FORM STATE:", formState)
 
+console.log("NEW FORM STATE:", formState)
 
     return (
-        <div className={theme}>
+       <div class>
        <FormPayload.Provider value={formState} > 
        <DispatchState.Provider value={dispatchState} > 
        <Allfields.Provider value={allfields} > 
-        <ThemeContext.Provider value={setTheme}>
-        <Form className={config.globalFormClasses} style={config.globalFormStyles} >
-        {theme}   
-        {generateMarkup(config)} 
-        </Form > 
+    
+        <form className={config.globalFormClasses} style={config.globalFormStyles} >   
+        {generateMarkup(config)}
+        </form > 
         <JSONCOMP />
-        </ThemeContext.Provider>
         </Allfields.Provider>
        </DispatchState.Provider >
        </FormPayload.Provider >    

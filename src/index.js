@@ -5,7 +5,7 @@ import './index.css';
 import './bootstrap.css';
 import './master.css';
 
-import AACNFORM from './components/organisms/aacnform';
+import AACNFORM from './components/organisms/aacnform_old';
 import FormWrapper from './components/organisms/form-wrapper';
 import Wrapper2 from './components/organisms/form-wrapper2';
 import {myConfig, myConfig2} from './data/myconfig';

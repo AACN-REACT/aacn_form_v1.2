@@ -144,30 +144,19 @@ const flowers =  [
       key: "005",
       value: "ROSE"
     },
-    {
-        name: "Daffodils",
-        
+    { name: "Daffodils",
     Parentkey:"002",
     key: "006",
     value: "DAF"
     },
-
     { name: "Tulips",
-      
+      selected:true,
       Parentkey:"003",
       key: "007",
       value: "TUL"
     },
-
-    {
-        name: "Sweet Peas",
-        
-        Parentkey: "003",
-        key: "008",
-        value: "SWP"
-    }, 
     { name: "Chrysanthemum",
-    
+    selected:true,
     Parentkey:"001",
     key: "005",
     value: "CHRYS"
@@ -176,59 +165,16 @@ const flowers =  [
 
 ]
 
-const snakes = [
-    {
-        name: "Viper",
-        selected:true,
-        Parentkey: "001",
-        key: "001",
-        value: "VIPER"
-    },
-
-    {
-        name: "Boid",
-        
-        Parentkey: "001",
-        key: "002",
-        value: "BOID"
-    },
-
-    {
-        name: "Python",
-        selected:true,
-        Parentkey: "002",
-        key: "003",
-        value: "PYTHON"
-    },
-
-    {
-        name: "Colubrid",
-        
-        Parentkey: "002",
-        key: "004",
-        value: "COLUBRID"
-    },
-
-    {
-        name: "Elapid",
-        selected: true,
-        Parentkey: "003",
-        key: "005",
-        value: "ELAPID"
-    },
-
-    ]
-
 
 const rooms = [
-    {name:"Presidential", value:"PRS", key:"001",parentykey:"003"},
-    {name:"Ambassador", value:"ABD", key:"002",parentykey:"003"},
-    {name:"Executive", value:"ABD", key:"003",parentykey:"003"},
-    {name:"Suite", value:"SUI", key:"004",parentykey:"001"},
-    {name:"Honeymoon", value:"HON", key:"005",parentykey:"001"},
-    {name:"Family", value:"FAM", key:"006",parentykey: ["001", "003"]},
-    {name:"Single", value:"SIN", key:"007",parentykey: ["001", "003"]},
-    {name:"Economy", value:"ECO", key:"008",parentykey: ["001", "003"]},
+    {name:"Presidential", value:"PRS", key:"001",Parentkey:"003"},
+    {name:"Ambassador", value:"ABD", key:"002",Parentkey:"003"},
+    {name:"Executive", value:"ABD", key:"003",Parentkey:"003"},
+    {name:"Suite", value:"SUI", key:"004",Parentkey:"001"},
+    {name:"Honeymoon", value:"HON", key:"005",Parentkey:"001"},
+    {name:"Family", value:"FAM", key:"006",Parentkey:  "003"},
+    {name:"Single", value:"SIN", key:"007",Parentkey:  "003"},
+    {name:"Economy", value:"ECO", key:"008",Parentkey:  "003"}
 ]
 
-export {rooms,flowers,countries,states,fruits,bands,snakes}
+export {rooms,flowers,countries,states,fruits,bands}
